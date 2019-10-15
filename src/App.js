@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled, { ThemeProvider } from "styled-components";
+import { HashRouter as Router } from "react-router-dom";
+// import GlobalStyles from "./Styles/GlobalStyles";
+import Theme from "./Styles/Theme";
 
-function App() {
+const Wrapper = styled.div`
+  margin: 0 auto;
+  max-width: ${props => props.theme.maxWidth};
+  width: 100%;
+`;
+
+const FakeText = styled.h1`
+  color: #777;
+`;
+
+export default function() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={Theme}>
+      <Wrapper>
+        <FakeText>Yay</FakeText>
+      </Wrapper>
+    </ThemeProvider>
   );
 }
-
-export default App;
