@@ -3,7 +3,7 @@ import styled, { ThemeProvider } from "styled-components";
 // import { HashRouter as Router } from "react-router-dom";
 // import GlobalStyles from "./Styles/GlobalStyles";
 import Theme from "./Styles/Theme";
-import Navigation from "./Components/Navigation"
+import Main from "./Components/Main"
 
 const Wrapper = styled.div`
   margin: 50px auto;
@@ -19,7 +19,7 @@ export default function() {
   return (
     <ThemeProvider theme={Theme}>
       <Wrapper>
-        <Navigation />
+        <Main />
       </Wrapper>
     </ThemeProvider>
   );
