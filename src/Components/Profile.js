@@ -13,9 +13,9 @@ const Wrapper = styled.div`
 const ProfileImage = styled.img.attrs({
     src: require('../assets/profile.jpg')
 })`
-    width: 240px;
-    height: 240px;
-    border-radius: 120px;
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
 `;
 
 const ProfileInfo = styled.div`
@@ -43,7 +43,7 @@ export default function() {
                 <a href={"https://github.com/jngcii"}>
                     <T1>https://github.com/jngcii</T1>
                 </a>
-                <T1>javascript, python</T1>
+                <T1>concotree@gmail.com</T1>
             </ProfileInfo>
         </Wrapper>
     )
