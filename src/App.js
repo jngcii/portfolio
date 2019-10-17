@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 `;
 
 const MainContainer = styled.div`
-  padding-right: 330px;
+  padding-right: 250px;
 `;
 
 const SideBar = styled.div`
@@ -21,14 +21,25 @@ const SideBar = styled.div`
   height: 100vh;
   width: 250px;
   background-color: #ccc;
+`;
+
+const SideRow = styled.div`
+  width: 100%;
+  height: 25vh;
   display: flex;
   flex-direction: column;
-  padding: 36px;
   align-items: center;
-  // border-left-color: #dfdfdf;
-  // border-left-width: 2px;
-  // border-left-style: solid;
+  justify-content: center;
 `;
+
+const TopRow = styled(SideRow)`
+  height: 15vh;
+`;
+
+const ProfileRow = styled(SideRow)`
+  height: 35vh;
+`;
+
 
 export default function() {
   return (
@@ -41,13 +52,21 @@ export default function() {
         </MainContainer>
 
         <SideBar>
-          <h1>Top</h1>
+          <TopRow>
+            <h1>Top</h1>
+          </TopRow>
+          
+          <SideRow>
+            <AppBtn src={require("./assets/checkloud-icon.png")} />
+          </SideRow>
 
-          <AppBtn src={require("./assets/checkloud-icon.png")} />
+          <SideRow>
+            <AppBtn src={require("./assets/wink-icon.png")} />
+          </SideRow>
 
-          <AppBtn src={require("./assets/wink-icon.png")} />
-
-          <Profile />
+          <ProfileRow>
+            <Profile />
+          </ProfileRow>
         </SideBar>
       </Wrapper>
     </ThemeProvider>

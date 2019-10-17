@@ -25,7 +25,7 @@ const LogoContainer = styled.div`
 `;
 
 const Logo = styled.img.attrs({
-    src: require("../assets/checkloud-logo.png")
+    src: require("../../assets/checkloud-logo.png")
 })`
     height: 70px;
 `;
@@ -56,7 +56,7 @@ export default function() {
 
                 <InfoContainer>
                     <T1>Checkloud</T1>
-                    <T2>loremldshagoaisdfjlasidfhlasdifj</T2>
+                    <T2>프로젝트 개요</T2>
                 </InfoContainer>
             </EntryContainer>
         </Wrapper>

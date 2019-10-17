@@ -8,6 +8,7 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 `;
 
 const ProfileImage = styled.img.attrs({
@@ -19,7 +20,6 @@ const ProfileImage = styled.img.attrs({
 `;
 
 const ProfileInfo = styled.div`
-    flex: 1;
     width: 100%;
     display: flex;
     flex-direction: column;
