@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/github.io/portfolio/static/css/main.15dbd3cd.chunk.css",
+    "main.js": "/github.io/portfolio/static/js/main.ae1bb3e9.chunk.js",
+    "main.js.map": "/github.io/portfolio/static/js/main.ae1bb3e9.chunk.js.map",
+    "runtime-main.js": "/github.io/portfolio/static/js/runtime-main.d440207f.js",
+    "runtime-main.js.map": "/github.io/portfolio/static/js/runtime-main.d440207f.js.map",
+    "static/js/2.68e0b4e9.chunk.js": "/github.io/portfolio/static/js/2.68e0b4e9.chunk.js",
+    "static/js/2.68e0b4e9.chunk.js.map": "/github.io/portfolio/static/js/2.68e0b4e9.chunk.js.map",
+    "index.html": "/github.io/portfolio/index.html",
+    "precache-manifest.e0db70d6b849f2e6932d8ae783185c16.js": "/github.io/portfolio/precache-manifest.e0db70d6b849f2e6932d8ae783185c16.js",
+    "service-worker.js": "/github.io/portfolio/service-worker.js",
+    "static/css/main.15dbd3cd.chunk.css.map": "/github.io/portfolio/static/css/main.15dbd3cd.chunk.css.map",
+    "static/media/checkloud-icon.png": "/github.io/portfolio/static/media/checkloud-icon.05490b8b.png",
+    "static/media/profile.jpg": "/github.io/portfolio/static/media/profile.bd3fa643.jpg",
+    "static/media/ss.png": "/github.io/portfolio/static/media/ss.2e990769.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d440207f.js",
+    "static/js/2.68e0b4e9.chunk.js",
+    "static/css/main.15dbd3cd.chunk.css",
+    "static/js/main.ae1bb3e9.chunk.js"
+  ]
+}
