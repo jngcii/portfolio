@@ -7,7 +7,6 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 50px;
 `;
 
 const EntryContainer = styled.div`
@@ -18,10 +17,11 @@ const EntryContainer = styled.div`
 `;
 
 const LogoContainer = styled.div`
-    flex: 2;
+    flex: 1;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+    padding-right: 50px;
 `;
 
 const Logo = styled.img.attrs({
@@ -31,10 +31,11 @@ const Logo = styled.img.attrs({
 `;
 
 const InfoContainer = styled.div`
-    flex: 3;
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-left: 50px;
 `;
 
 const T1 = styled.p`
