@@ -1,13 +1,5 @@
 import React, {useState} from "react";
-import styled, {keyframes, css}  from "styled-components";
-
-const SlideIn = keyframes`
-    100% { right: 0; }
-`;
-
-const SlideOut = keyframes`
-    100% { right: 249px; }
-`;
+import styled, {css}  from "styled-components";
 
 const Wrapper = styled.div`
     width: 100%;
@@ -35,11 +27,14 @@ const Slider = styled.div`
     height: 24.5vh;
     position: absolute;
     background-color: rgba(0,0,0,0.6);
-    right: 249px;
-    animation: ${SlideOut} 0.3s forwards;
 
-    ${props => props.now && css`
-        animation: ${SlideIn} 0.3s forwards;
+    transition-duration: 0.1s;
+    transition-timing-function: linear;
+
+    ${props => props.now ? css`
+        right: 0;
+    ` : css`
+        right: 249px;
     `};
 `;
 
