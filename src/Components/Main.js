@@ -21,9 +21,9 @@ const T2 = styled.p`
     margin: 5px;
 `;
 
-export default function() {
+export default function({linkId}) {
     return (
-        <Wrapper>
+        <Wrapper id={linkId[0]}>
             <T1>Portfolio</T1>
 
             <T2>of</T2>

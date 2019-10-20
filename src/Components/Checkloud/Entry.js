@@ -47,9 +47,9 @@ const T2 = styled.p`
     font-weight: 400;
 `;
 
-export default function() {
+export default function({linkId}) {
     return (
-        <Wrapper>
+        <Wrapper id={linkId[2]}>
             <EntryContainer>
                 <LogoContainer>
                     <Logo />

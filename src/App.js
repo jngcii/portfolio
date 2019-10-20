@@ -25,17 +25,19 @@ const SideBarContainer = styled.div`
 
 
 export default function() {
+  const linkId = ["intro", "skills", "project", "contact"];
+
   return (
     <ThemeProvider theme={Theme}>
       <Wrapper>
         <MainContainer>
-          <Main />
+          <Main linkId={linkId} />
 
-          <Checkloud />
+          <Checkloud linkId={linkId} />
         </MainContainer>
 
         <SideBarContainer>
-          <SideBar />
+          <SideBar linkId={linkId} />
         </SideBarContainer>
       </Wrapper>
     </ThemeProvider>
