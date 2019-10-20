@@ -46,28 +46,22 @@ const T1 = styled.p`
     z-index: 0;
 `;
 
-export default function({linkId}) {
+export default function() {
     const [now, setNow] = useState(null);
 
     return (
         <Wrapper>
-            {/* {rows.map(row => {
-                return (
-                    <Box key={row} onMouseOver={()=>setNow(row)} onMouseOut={()=>setNow(null)}>
-                        <p style={{marginLeft: 12, marginTop: 7}}>{row}</p>
-                        <Slider now={now===row} />
-                    </Box>
-                )
-            })} */}
             <Box onMouseOver={()=>setNow("Intro")} onMouseOut={()=>setNow(null)}>
-                <a href={`#${linkId[0]}`}>
+                <a href={"#intro"}>
                     <Slider style={{backgroundColor:"rgba(0, 0, 0 ,0.6)"}} now={now==="Intro"} />
                 </a>
                 <p style={{zIndex:0 ,marginLeft: 12, marginTop: 7}}>Welcome</p>
             </Box>
 
             <Box onMouseOver={()=>setNow("Skills")} onMouseOut={()=>setNow(null)}>
-                <Slider style={{backgroundColor:"rgba(0, 0, 0 ,0.6)"}} now={now==="Skills"} />
+                <a href={"#skills"}>
+                    <Slider style={{backgroundColor:"rgba(0, 0, 0 ,0.6)"}} now={now==="Skills"} />
+                </a>
                 <p style={{zIndex:0 ,marginLeft: 12, marginTop: 7}}>I know</p>
                 <T1>Javascript</T1>
                 <T1>Python</T1>
@@ -75,14 +69,16 @@ export default function({linkId}) {
 
             
             <Box onMouseOver={()=>setNow("Project")} onMouseOut={()=>setNow(null)}>
-                <a href={`#${linkId[2]}`}>
+                <a href={"#project"}>
                     <Slider style={{backgroundColor:"rgba(0, 0, 0 ,0.6)"}} now={now==="Project"} />
                 </a>
                 <p style={{zIndex:0 ,marginLeft: 12, marginTop: 7}}>I made</p>
             </Box>
 
             <Box onMouseOver={()=>setNow("Contact")} onMouseOut={()=>setNow(null)}>
-                <Slider style={{backgroundColor:"rgba(0, 0, 0 ,0.6)"}} now={now==="Contact"} />
+                <a href={"#contact"}>
+                    <Slider style={{backgroundColor:"rgba(0, 0, 0 ,0.6)"}} now={now==="Contact"} />
+                </a>
                 <p style={{zIndex:0 ,marginLeft: 12, marginTop: 7}}>My contact</p>
             </Box>
         </Wrapper>

@@ -2,7 +2,9 @@ import React from 'react';
 import styled, { ThemeProvider } from "styled-components";
 import Theme from "./Styles/Theme";
 import Main from "./Components/Main";
+import Skills from "./Components/Skills";
 import Checkloud from "./Components/Checkloud";
+import Contact from "./Components/Contact";
 import SideBar from "./Components/SideBar";
 
 const Wrapper = styled.div`
@@ -11,7 +13,9 @@ const Wrapper = styled.div`
 `;
 
 const MainContainer = styled.div`
-  padding-right: 250px;
+  margin-right: 250px;
+  display: flex;
+  flex-direction: column;
 `;
 
 const SideBarContainer = styled.div`
@@ -33,11 +37,15 @@ export default function() {
         <MainContainer>
           <Main linkId={linkId} />
 
+          <Skills linkId={linkId} />
+
           <Checkloud linkId={linkId} />
+
+          <Contact linkId={linkId} />
         </MainContainer>
 
         <SideBarContainer>
-          <SideBar linkId={linkId} />
+          <SideBar />
         </SideBarContainer>
       </Wrapper>
     </ThemeProvider>
