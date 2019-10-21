@@ -89,7 +89,7 @@ export default function({pick, setPick}) {
                 <Content />
             </Wrapper>
         ):(
-            <h2>Tools</h2>
+            <h3>Tools</h3>
         )}
         </Container>
     );

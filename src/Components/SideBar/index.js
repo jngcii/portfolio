@@ -34,7 +34,7 @@ const Slider = styled.div`
     ${props => props.now ? css`
         right: 0;
     ` : css`
-        right: 250px;
+        right: 248px;
     `};
 `;
 
@@ -54,7 +54,7 @@ export default function({now, setNow}) {
                 <a href={"#intro"}>
                     <Slider style={{backgroundColor:"rgba(0, 0, 0 ,0.6)"}} now={now==="Intro"} />
                 </a>
-                <p style={{zIndex:0 ,marginLeft: 12, marginTop: 7}}>Welcome</p>
+                <p style={{zIndex:0 ,marginLeft: 12, marginTop: 7}}>I introduce</p>
             </Box>
 
             <Box onMouseOver={()=>setNow("Skills")}>
@@ -78,7 +78,7 @@ export default function({now, setNow}) {
                 <a href={"#contact"}>
                     <Slider style={{backgroundColor:"rgba(0, 0, 0 ,0.6)"}} now={now==="Contact"} />
                 </a>
-                <p style={{zIndex:0 ,marginLeft: 12, marginTop: 7}}>My contact</p>
+                <p style={{zIndex:0 ,marginLeft: 12, marginTop: 7}}>I am</p>
             </Box>
         </Wrapper>
     )

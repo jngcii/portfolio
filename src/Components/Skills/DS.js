@@ -90,7 +90,7 @@ export default function({pick, setPick}) {
                     <Content />
                 </Wrapper>
             ):(
-                <h3>Data Structure</h3>
+                <h2>Data Structure</h2>
             )}
         </Container>
     );

@@ -29,7 +29,7 @@ export default function({linkId}) {
     return (
         <Wrapper id={linkId[3]}>
             <Header>
-                <Title>My contact</Title>
+                <Title>I am</Title>
             </Header>
         </Wrapper>
     )

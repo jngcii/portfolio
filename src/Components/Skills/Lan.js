@@ -89,7 +89,7 @@ export default function({pick, setPick}) {
                 <Content />
             </Wrapper>
         ):(
-            <h2>Language</h2>
+            <h3>Language</h3>
         )}
         </Container>
     );
