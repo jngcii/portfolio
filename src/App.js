@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 `;
 
 const MainContainer = styled.div`
-  margin-right: 250px;
+  margin-right: 252px;
   display: flex;
   flex-direction: column;
 `;

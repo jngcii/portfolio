@@ -34,7 +34,7 @@ const Slider = styled.div`
     ${props => props.now ? css`
         right: 0;
     ` : css`
-        right: 249px;
+        right: 250px;
     `};
 `;
 

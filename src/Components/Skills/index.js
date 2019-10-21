@@ -7,11 +7,10 @@ import DS from "./DS";
 import Tools from "./Tools";
 
 const Wrapper = styled.div`
-    height: 100vh;
+    height: 85vh;
     display: flex;
     flex-direction: column;
     padding: 30px;
-    background-color: #111;
 `;
 
 const Header = styled.div`
@@ -30,7 +29,7 @@ const Title = styled.div`
 
     font-size: 21px;
     font-weight: 700;
-    color: #fff;
+    color: #111;
 `;
 
 const Body = styled.div`
