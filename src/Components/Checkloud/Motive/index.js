@@ -65,10 +65,8 @@ const T2 = styled.p`
 `;
 
 
-export default function() {
+export default function({mot}) {
     const [cnt, setCnt] = useState(1);
-
-    console.log(cnt);
 
     return (
         <Wrapper>
@@ -84,13 +82,15 @@ export default function() {
                     {cnt === 3 && <T2>So, sometimes, they forgot what to do.</T2>}
                 </Summary>
 
-                <Motion>
-                    <PostIt>
-                        {cnt === 1 && <Typing1 cnt={cnt} setCnt={setCnt} />}
-                        {cnt === 2 && <Typing2 cnt={cnt} setCnt={setCnt} />}
-                        {cnt === 3 && <Typing3 cnt={cnt} setCnt={setCnt} />}
-                    </PostIt>
-                </Motion>
+                {mot && (
+                    <Motion>
+                        <PostIt>
+                            {cnt === 1 && <Typing1 cnt={cnt} setCnt={setCnt} />}
+                            {cnt === 2 && <Typing2 cnt={cnt} setCnt={setCnt} />}
+                            {cnt === 3 && <Typing3 cnt={cnt} setCnt={setCnt} />}
+                        </PostIt>
+                    </Motion>
+                )}
             </Rest>
         </Wrapper>
     )

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import styled, {css}  from "styled-components";
 
 const Wrapper = styled.div`
@@ -19,7 +19,7 @@ const Box = styled.div`
     
     font-size: 19px;
     font-weight: 700;
-    color: #555;
+    color: #000;
 `;
 
 const Slider = styled.div`
@@ -46,19 +46,18 @@ const T1 = styled.p`
     z-index: 0;
 `;
 
-export default function() {
-    const [now, setNow] = useState(null);
+export default function({now, setNow}) {
 
     return (
         <Wrapper>
-            <Box onMouseOver={()=>setNow("Intro")} onMouseOut={()=>setNow(null)}>
+            <Box onMouseOver={()=>setNow("Intro")}>
                 <a href={"#intro"}>
                     <Slider style={{backgroundColor:"rgba(0, 0, 0 ,0.6)"}} now={now==="Intro"} />
                 </a>
                 <p style={{zIndex:0 ,marginLeft: 12, marginTop: 7}}>Welcome</p>
             </Box>
 
-            <Box onMouseOver={()=>setNow("Skills")} onMouseOut={()=>setNow(null)}>
+            <Box onMouseOver={()=>setNow("Skills")}>
                 <a href={"#skills"}>
                     <Slider style={{backgroundColor:"rgba(0, 0, 0 ,0.6)"}} now={now==="Skills"} />
                 </a>
@@ -68,14 +67,14 @@ export default function() {
             </Box>
 
             
-            <Box onMouseOver={()=>setNow("Project")} onMouseOut={()=>setNow(null)}>
+            <Box onMouseOver={()=>setNow("Project")}>
                 <a href={"#project"}>
                     <Slider style={{backgroundColor:"rgba(0, 0, 0 ,0.6)"}} now={now==="Project"} />
                 </a>
                 <p style={{zIndex:0 ,marginLeft: 12, marginTop: 7}}>I made</p>
             </Box>
 
-            <Box onMouseOver={()=>setNow("Contact")} onMouseOut={()=>setNow(null)}>
+            <Box onMouseOver={()=>setNow("Contact")}>
                 <a href={"#contact"}>
                     <Slider style={{backgroundColor:"rgba(0, 0, 0 ,0.6)"}} now={now==="Contact"} />
                 </a>

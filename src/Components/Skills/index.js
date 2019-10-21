@@ -6,6 +6,7 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     padding: 30px;
+    background-color: #111;
 `;
 
 const Header = styled.div`

@@ -16,7 +16,6 @@ const T2 = styled.p`
 `;
 
 export default function({cnt, setCnt}) {
-    console.log("fjfj", cnt);
     return (
         <Wrapper>
             <Typing speed={15} onFinishedTyping={()=>{setTimeout(()=>setCnt(cnt+1), 500)}}>
