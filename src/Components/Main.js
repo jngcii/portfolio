@@ -9,26 +9,16 @@ const Wrapper = styled.div`
     justify-content: center;
 `;
 
-const T1 = styled.p`
-    font-size: 50px;
-    font-weight: 500;
-    margin: 15px;
-`;
-const T2 = styled.p`
-    font-size: 20px;
-    font-weight: 400;
-    color: #555;
-    margin: 5px;
+const Main = styled.img.attrs({
+    src: require("../assets/main_image.png")
+})`
+    width: 40vw;
 `;
 
 export default function({linkId}) {
     return (
         <Wrapper id={linkId[0]}>
-            <T1>Portfolio</T1>
-
-            <T2>of</T2>
-            <T2>Web Developer</T2>
-            <T2>Jung Hyung Soo</T2>
+            <Main />
         </Wrapper>
     );
 }

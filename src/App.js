@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 `;
 
 const MainContainer = styled.div`
-  margin-right: 252px;
+  margin-right: 202px;
   display: flex;
   flex-direction: column;
 `;
@@ -22,7 +22,7 @@ const SideBarContainer = styled.div`
   align-self: flex-end;
   position: fixed;
   height: 100vh;
-  width: 250px;
+  width: 200px;
   display: flex;
   flex-direction: column;
 `;
