@@ -49,9 +49,13 @@ const Name = styled.div`
 `;
 
 const LinkContainer = styled.a`
+    align-self: center;
+    width:300px;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: default;
+    text-decoration: none;
 `;
 const IconCotainer = styled.div`
     width: 60px;
@@ -65,6 +69,7 @@ const GitIcon = styled.img.attrs({
 })`
     width: 40px;
     height: 40px;
+    cursor: pointer;
 `;
 const GmailIcon = styled.img.attrs({
     src: require("../../assets/gmail.png")
@@ -74,7 +79,6 @@ const GmailIcon = styled.img.attrs({
 `;
 const DomainContainer = styled.div`
     width: 240px;
-    text-decoration: none;
     font-size: 18px;
     font-weight: 500;
     color: #2091f5;
@@ -97,18 +101,18 @@ export default function({linkId}) {
                     <Name>Jung Hyung Soo</Name>
                 </Container>
 
-                <LinkContainer>
+                <LinkContainer href="https://github.com/jngcii" target="_blank">
                     <IconCotainer>
                         <GitIcon />
                     </IconCotainer>
-                    <DomainContainer>https://github.com/jngcii</DomainContainer>
+                    <DomainContainer style={{cursor: "pointer"}}>https://github.com/jngcii</DomainContainer>
                 </LinkContainer>
 
                 <LinkContainer>
                     <IconCotainer>
                         <GmailIcon />
                     </IconCotainer>
-                    <DomainContainer>concotree@gmail.com</DomainContainer>
+                    <DomainContainer style={{cursor: "text"}}>concotree@gmail.com</DomainContainer>
                 </LinkContainer>
             </Body>
 
