@@ -12,8 +12,14 @@ const Wrapper = styled.div`
   flex-direction: column;
 `;
 
+const Divider = styled.div`
+  height: 20px;
+  background-color: #fff;
+  box-shadow: inset 0 0 5px 0 rgba(0,0,0,0.2);
+`;
+
 const MainContainer = styled.div`
-  margin-right: 202px;
+  margin-right: 200px;
   display: flex;
   flex-direction: column;
 `;
@@ -48,8 +54,6 @@ export default function() {
       else setNow("Contact");
 
       if(scrollTop > 1500) setMot(true);
-
-      console.log(scrollTop);
     });
   },[])
 
@@ -59,9 +63,15 @@ export default function() {
         <MainContainer>
           <Main linkId={linkId} />
 
+          <Divider />
+
           <Skills linkId={linkId} />
 
+          <Divider />
+
           <Checkloud linkId={linkId} mot={mot} />
+          
+          <Divider />
 
           <Contact linkId={linkId} />
         </MainContainer>
