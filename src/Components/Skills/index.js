@@ -18,6 +18,7 @@ const Header = styled.div`
     height: 80px;
     display: flex;
     align-items: center;
+    justify-content: center;
 `;
 
 const Title = styled.div`
@@ -27,9 +28,9 @@ const Title = styled.div`
     align-items: center;
     justify-content: center;
 
-    font-size: 20px;
-    font-weight: 600;
-    color: #111;
+    font-size: 21px;
+    font-weight: 700;
+    color: #333;
 `;
 
 const Body = styled.div`
@@ -47,7 +48,7 @@ export default function({linkId}) {
     return (
         <Wrapper id={linkId[1]}>
             <Header>
-                <Title><h1>Skills</h1></Title>
+                <Title>Skills</Title>
             </Header>
 
             <Body>

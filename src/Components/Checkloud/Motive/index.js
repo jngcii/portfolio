@@ -70,10 +70,6 @@ export default function({mot}) {
 
     return (
         <Wrapper>
-            <Header>
-                <T1>Motive</T1>
-            </Header>
-
             <Rest>
                 <Summary>
                     {cnt === 1 && <T2>People's life is repeative.</T2>}

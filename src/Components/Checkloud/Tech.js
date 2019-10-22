@@ -24,10 +24,6 @@ const T1 = styled.p`
 
 export default function() {
     return (
-        <Wrapper>
-            <Header>
-                <T1>Tech Stack</T1>
-            </Header>
-        </Wrapper>
-    )
+        <Wrapper />
+    );
 }

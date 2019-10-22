@@ -49,17 +49,6 @@ const T2 = styled.p`
 
 export default function({linkId}) {
     return (
-        <Wrapper id={linkId[2]}>
-            <EntryContainer>
-                <LogoContainer>
-                    <Logo />
-                </LogoContainer>
-
-                <InfoContainer>
-                    <T1>Checkloud</T1>
-                    <T2>프로젝트 개요</T2>
-                </InfoContainer>
-            </EntryContainer>
-        </Wrapper>
+        <Wrapper id={linkId[2]} />
     );
 }

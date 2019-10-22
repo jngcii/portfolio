@@ -38,14 +38,6 @@ const Ss = styled.img.attrs({
 
 export default function() {
     return (
-        <Wrapper>
-            <Header>
-                <T1>How To Use</T1>
-            </Header>
-
-            <Rest>
-                <Ss />
-            </Rest>
-        </Wrapper>
-    )
+        <Wrapper />
+    );
 }
