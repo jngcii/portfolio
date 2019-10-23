@@ -2,6 +2,8 @@ import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import Introduction from "./Screens/Introduction";
 import Skills from "./Screens/Skills";
+import Project from "./Screens/Project";
+import Contact from "./Screens/Contact";
 
 const Wrapper = styled.div`
     width:100%;
@@ -93,13 +95,15 @@ export default function(){
             <Nav>
                 <Link s={navState==="s"} href="#introduction">INTRODUCTION</Link>
                 <Link s={navState==="s"} href="#skills">SKILLS</Link>
-                <Link s={navState==="s"}>PROJECT</Link>
-                <Link s={navState==="s"}>CONTACT</Link>
+                <Link s={navState==="s"} href="#project">PROJECT</Link>
+                <Link s={navState==="s"} href="#contact">CONTACT</Link>
             </Nav>
 
             <Content>
                 <Introduction />
                 <Skills />
+                <Project />
+                <Contact />
             </Content>
         </Wrapper>
     );

@@ -200,5 +200,5 @@ export default function() {
                 </A>
             </Body>
         </Wrapper>
-    )
+    );
 }
