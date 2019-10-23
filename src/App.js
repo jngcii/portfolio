@@ -9,6 +9,27 @@ const Wrapper = styled.div`
     width:100%;
     display: flex;
     flex-direction: column;
+    position: relative;
+    overflow: hidden;
+`;
+
+const Avatar = styled.img.attrs({
+    src: require("./assets/avatar.png")
+})`
+    position: fixed;
+    width: 30vw;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    z-index: 2;
+    transition: .5s linear;
+    right:0;
+    bottom: 0;
+
+    ${props => props.s && `
+        right: -30vw;
+        bottom: -30vw;
+    `};
 `;
 
 const Title = styled.div`
@@ -90,6 +111,9 @@ export default function(){
 
     return (
         <Wrapper>
+            <Avatar s={navState==="s"} />
+            
+
             <Title s={navState==="s"}>{navState==="b" && "This is web developer "} jngcii's Portfolio</Title>
 
             <Nav>
