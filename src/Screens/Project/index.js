@@ -32,31 +32,31 @@ const Title = styled.div`
     color: #333;
 `;
 
-const Body = styled.div`
-    height: 360px;
-    width: 900px;
+const Selector = styled.div`
+    width: 90%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 5px 20px;
+`;
+const SelectColumn = styled.div`
+    flex: 1;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
+    font-family: 'Prompt', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: #333;
 `;
 
-const Container = styled.div`
-    position: relative;
-    width: 400px;
-    height: 300px;
-    border-radius: 30px;
-    box-shadow: 0 0 4px 1px rgba(0,0,0,0.3);
-    margin: 0 20px;
+const Body = styled.div`
+    min-height: 100vh;
+    width: 100%;
+    padding: 10px 30px;
+    display: flex;
 `;
-
-const AppLogo = styled.img`
-    width: 70px;
-    position: absolute;
-    left: 10px;
-    top: 10px;
-`;
-
 
 
 export default function() {
@@ -67,15 +67,16 @@ export default function() {
                 <Title>Project</Title>
             </Header>
 
-            <Body>
-                <Container style={{backgroundColor:"#333"}}>
-                    <AppLogo src={require("../../assets/checkloud-logo.png")} />
-                </Container>
+            <Selector>
+                <SelectColumn style={{borderBottomColor:"#e3d839", borderBottomWidth: 3, borderBottomStyle:"solid", fontWeight:"900"}}>
+                    Checkloud
+                </SelectColumn>
+                <SelectColumn style={{color:"#ccc"}}>
+                    Wink
+                </SelectColumn>
+            </Selector>
 
-                <Container style={{backgroundColor:"#efefef"}}>
-                    <AppLogo src={require("../../assets/wink-icon.png")} style={{width:60}} />
-                </Container>
-            </Body>
+            <Body />
         </Wrapper>
     );
 }
