@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -58,14 +58,19 @@ const A = styled.div`
     background-color: #fafafa;
     box-shadow: 0 0 3px rgba(0,0,0,0.3);
     display: flex;
-    flex-direction: column;
 
-    transition: .5s;
+    transition: .2s;
 
     :hover{
         width: 900px;
         z-index: 1;
     }
+`;
+const InnerA = styled.div`
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    overflow: hidden;
 `;
 
 const IconContainer = styled.div`
@@ -85,6 +90,12 @@ const Icon = styled.img`
     width: 30px;
 `;
 
+const AContainer = styled.div`
+    width: 900px;
+    height: 360px;
+    display: flex;
+    align-items: center;
+`;
 const ATitle = styled.div`
     font-family: 'Prompt', sans-serif;
     font-size: 22px;
@@ -101,31 +112,55 @@ const ABody = styled.div`
     display: flex;
     flex-direction: column;
 `;
-
-const Row = styled.div`
-    width: 100%;
-    display: flex;
-    position: relative;
-    overflow: hidden;
-    padding: 5px 10px;
-`;
 const Left = styled.div`
     width: 280px;
-    font-family: 'Prompt', sans-serif;
-    font-size: 16px;
-    font-weight: 800;
-    color: #666;
+    height: 100%;
+`;
+const Divider = styled.div`
+    width: 1px;
+    height: 95%;
+    background-color: #ddd;
 `;
 const Right = styled.div`
-    flex:1;
+    width: 619px;
+    height: 100%;
+`;
+
+const ASummary = styled.div`
     font-family: 'Prompt', sans-serif;
     font-size: 14px;
+    font-weight: 900;
+    color: #e3c934;
+    margin-bottom: 10px;
+    align-self: center;
+`;
+
+const ABig = styled.div`
+    font-family: 'Prompt', sans-serif;
+    font-size: 17px;
     font-weight: 600;
-    color: #444;
+    color: #333;
+    margin-left: 10px;
+    margin-top: 12px;
+`;
+
+const ASmall = styled.div`
+    font-family: 'Prompt', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: #333;
+    margin-left: 10px;
+`;
+
+const ADetail = styled.div`
+    font-family: 'Prompt', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    margin-left: 10px;
 `;
 
 export default function() {
-    const [pick, setPick] = useState(null);
 
     return (
         <Wrapper id="skills">
@@ -134,69 +169,147 @@ export default function() {
             </Header>
 
             <Summary>I use Javascript mainly.</Summary>
-            <Summary> I know Javascript very deeply and I can use it efficiently.</Summary>
+            <Summary>I know Javascript very deeply and I can use it efficiently.</Summary>
             <Summary>I also use Python and Java a little.</Summary>
 
             <Body>
                 <A style={{alignSelf:"flex-start"}}>
+                    <InnerA>
+                        <AContainer>
+                            <Left>
+                                <ATitle>Server</ATitle>
+
+                                <ABody>
+                                    <ASummary>
+                                        I can make REST-API and Graphql-API.
+                                    </ASummary>
+
+                                    <ABig>Javascript</ABig>
+                                    <ASmall>framework : express, graphql</ASmall>
+
+                                    <ABig>Python</ABig>
+                                    <ASmall>framework : Django</ASmall>
+
+                                    <ABig>Docker</ABig>
+
+                                    <ABig>NGINX</ABig>
+                                </ABody>
+                            </Left>
+
+                            <Divider />
+
+                            <Right>
+                                <ABig>Javascript</ABig>
+                                <ADetail>
+                                    Javascript is my main using language. I know how javascript work with its engine(V8) in computer. If data is small to process and communicate, I usually use node.js for server environment.
+                                </ADetail>
+
+                                <ABig>Python</ABig>
+                                <ADetail>
+                                    Python is my first web programming language. I use Django-rest-framework for python project.
+                                </ADetail>
+
+                                <ABig>Docker</ABig>
+                                <ADetail>
+                                    I use Docker to administrate project.
+                                </ADetail>
+
+                                <ABig>NGINX</ABig>
+                                <ADetail>
+                                    I usually use NGINX for reverse-proxy server or Load-Balancer using upstream module.
+                                </ADetail>
+                            </Right>
+                        </AContainer>
+                    </InnerA>
+
                     <IconContainer>
                         <Icon src={require("../../assets/backend.png")} />
                     </IconContainer>
-
-                    <ATitle>Back-end</ATitle>
-                    <ABody>
-                        <Row>
-                            <Left>Javascript/Express/Graphql</Left>
-                            {/* <Right>scope, prototype, closure 등의 기본적인 javascript를 이해하고 express 프레임워크를 통해 rest/graphql API 서버 구축 가능</Right> */}
-                        </Row>
-                        <Row>
-                            <Left>Python/Django</Left>
-                        </Row>
-                    </ABody>
                 </A>
                 
                 <A style={{alignSelf:"center"}}>
+                    <InnerA>
+                        <AContainer>
+                            <Left>
+                                <ATitle>Client</ATitle>
+
+                                <ABody>
+                                    <ASummary>
+                                        I use React for front-end development.
+                                    </ASummary>
+
+                                    <ABig>HTML5</ABig>
+
+                                    <ABig>CSS3</ABig>
+
+                                    <ABig>Javascript</ABig>
+                                    <ASmall>version : ~ ESS & ES6</ASmall>
+                                    <ASmall>library &nbsp;: React, React-native, redux, apollo, react-hooks</ASmall>
+                                </ABody>
+                            </Left>
+
+                            <Divider />
+
+                            <Right>
+                                <ABig>HTML5 & CSS3</ABig>
+                                <ADetail>
+                                    Basically, I know syntax HTML5 and CSS3 and can use it freely.
+                                </ADetail>
+
+                                <ABig>Javascript</ABig>
+                                <ADetail>
+                                    I use React and React-Native javascript library to make dynamic web and to communicate with Server.
+                                </ADetail>
+                                <ADetail>
+                                    To manage state, Redux or Apollo-client is used and recently I'm using apollo-client, apollo-inmemory-cache and react-hooks.
+                                </ADetail>
+                            </Right>
+                        </AContainer>
+                    </InnerA>
+
                     <IconContainer>
                         <Icon src={require("../../assets/frontend.png")} />
                     </IconContainer>
-
-                    <ATitle>Front-end</ATitle>
-                    <ABody>
-                        <Row>
-                            <Left>React/React-native</Left>
-                        </Row>
-                        <Row>
-                            <Left>Javscript</Left>
-                        </Row>
-                        <Row>
-                            <Left>Html</Left>
-                        </Row>
-                        <Row>
-                            <Left>Css</Left>
-                        </Row>
-                    </ABody>
                 </A>
                 
                 <A style={{alignSelf:"flex-end"}}>
                     <IconContainer>
                         <Icon src={require("../../assets/others.png")} />
                     </IconContainer>
+                    
+                    <InnerA>
+                        <AContainer>
+                            <Left>
+                                <ATitle>Others</ATitle>
 
-                    <ATitle>Others</ATitle>
-                    <ABody>
-                        <Row>
-                            <Left>Git</Left>
-                        </Row>
-                        <Row>
-                            <Left>Docker</Left>
-                        </Row>
-                        <Row>
-                            <Left>Linux</Left>
-                        </Row>
-                        <Row>
-                            <Left>nginx</Left>
-                        </Row>
-                    </ABody>
+                                <ABody>
+                                    <ASummary>
+                                        I use git as version management.
+                                    </ASummary>
+
+                                    <ABig>Version Management</ABig>
+                                    <ASmall>tools : Git</ASmall>
+
+                                    <ABig>Simple Design</ABig>
+                                    <ASmall>tools : Photoshop, Procreate</ASmall>
+                                </ABody>
+                            </Left>
+
+                            <Divider />
+
+                            <Right>
+                                <ABig>Git</ABig>
+                                <ADetail>
+                                    I use git to manage my project version and Collaborate. I can use collaborating command of git.
+                                </ADetail>
+
+                                <ABig>Simple Design</ABig>
+                                <ADetail>
+                                    I learned design in university. So I can design a little.
+                                </ADetail>
+                            </Right>
+                        </AContainer>
+                    </InnerA>
                 </A>
             </Body>
         </Wrapper>
