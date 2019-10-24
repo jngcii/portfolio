@@ -243,7 +243,7 @@ export default function() {
                                     <ABig>CSS3</ABig>
 
                                     <ABig>Javascript</ABig>
-                                    <ASmall>version : ~ ESS & ES6</ASmall>
+                                    <ASmall>version : ~ ES5 & ES6</ASmall>
                                     <ASmall>library &nbsp;: React, React-native, redux, apollo, react-hooks</ASmall>
                                 </ABody>
                             </Left>
