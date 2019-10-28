@@ -26,9 +26,18 @@ const Avatar = styled.img.attrs({
     right:0;
     bottom: 0;
 
+    @media only screen and (max-width: 512px) {
+        width: 50vw;
+    }
+
     ${props => props.s && `
         right: -30vw;
         bottom: -30vw;
+
+        @media only screen and (max-width: 512px) {
+            right: -50vw;
+            bottom: -50vw;
+        }
     `};
 `;
 
@@ -82,6 +91,10 @@ const Nav = styled.div`
     display: flex;
     justify-content: flex-end;
     z-index: 2;
+
+    @media only screen and (max-width: 512px) {
+        justify-content: center;
+    }
 
     ${props => props.s && `
         @media only screen and (max-width: 512px) {
