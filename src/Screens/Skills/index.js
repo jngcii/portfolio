@@ -8,6 +8,10 @@ const Wrapper = styled.div`
     width: 100%;
     background-color: #fff;
     padding-bottom: 100px;
+
+    @media only screen and (max-width: 512px) {
+        padding-bottom: 20px;
+    }
 `;
 
 const Header = styled.div`
@@ -37,33 +41,53 @@ const Summary = styled.div`
     font-size: 20px;
     font-weight: 500;
     color: #444;
+
+    @media only screen and (max-width: 1050px) {
+        font-size: 15px;
+    }
+
+    @media only screen and (max-width: 512px) {
+        font-size: 12px;
+    }
 `;
 
 const Body = styled.div`
     position: relative;
-    height: 360px;
-    width: 900px;
-    display: flex;
     flex-direction: column;
+    display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 60px;
+
+    @media only screen and (min-width: 1050px) {
+        height: 360px;
+        width: 900px;
+    }
 `;
 
 const A = styled.div`
-    position: absolute;
-    width: 280px;
-    height: 360px;
     border-radius: 5px;
     background-color: #fafafa;
     box-shadow: 0 0 3px rgba(0,0,0,0.3);
     display: flex;
 
-    transition: .2s;
+    @media only screen and (min-width: 1050px) {
+        position: absolute;
+        width: 280px;
+        height: 360px;
+        transition: .2s;
 
-    :hover{
-        width: 900px;
-        z-index: 1;
+        :hover{
+            width: 900px;
+            z-index: 1;
+        }
+    }
+
+    @media only screen and (max-width: 1050px) {
+        width: 80vw;
+        margin: 20px auto;
+        padding: 40px 0;
+        position: relative;
     }
 `;
 const InnerA = styled.div`
@@ -91,10 +115,14 @@ const Icon = styled.img`
 `;
 
 const AContainer = styled.div`
-    width: 900px;
-    height: 360px;
     display: flex;
     align-items: center;
+
+    @media only screen and (min-width: 1050px) {
+        width: 900px;
+        height: 360px;
+    }
+
 `;
 const ATitle = styled.div`
     font-family: 'Prompt', sans-serif;
@@ -115,15 +143,28 @@ const ABody = styled.div`
 const Left = styled.div`
     width: 280px;
     height: 100%;
+
+    @media only screen and (max-width: 1050px) {
+        display: none;
+    }
 `;
 const Divider = styled.div`
     width: 1px;
     height: 95%;
     background-color: #ddd;
+
+    @media only screen and (max-width: 1050px) {
+        display: none;
+    }
 `;
 const Right = styled.div`
     width: 619px;
     height: 100%;
+    
+    @media only screen and (max-width: 1050px) {
+        width: 100%;
+        padding: 0 20px;
+    }
 `;
 
 const ASummary = styled.div`
@@ -174,6 +215,10 @@ export default function() {
 
             <Body>
                 <A style={{alignSelf:"flex-start"}}>
+                    <IconContainer>
+                        <Icon src={require("../../assets/backend.png")} />
+                    </IconContainer>
+
                     <InnerA>
                         <AContainer>
                             <Left>
@@ -221,13 +266,13 @@ export default function() {
                             </Right>
                         </AContainer>
                     </InnerA>
-
-                    <IconContainer>
-                        <Icon src={require("../../assets/backend.png")} />
-                    </IconContainer>
                 </A>
                 
                 <A style={{alignSelf:"center"}}>
+                    <IconContainer>
+                        <Icon src={require("../../assets/frontend.png")} />
+                    </IconContainer>
+
                     <InnerA>
                         <AContainer>
                             <Left>
@@ -266,10 +311,6 @@ export default function() {
                             </Right>
                         </AContainer>
                     </InnerA>
-
-                    <IconContainer>
-                        <Icon src={require("../../assets/frontend.png")} />
-                    </IconContainer>
                 </A>
                 
                 <A style={{alignSelf:"flex-end"}}>

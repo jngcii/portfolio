@@ -2,8 +2,8 @@ import React from "react";
 import styled, {keyframes} from "styled-components";
 
 const move = keyframes`
-    from { margin-top: 30px; }
-    to { margin-top: 60px; }
+    from { margin-top: 25px; }
+    to { margin-top: 50px; }
 `;
 
 const Wrapper = styled.div`
@@ -34,6 +34,12 @@ const Container = styled.div`
 
     background-color: rgba(255, 239, 66, 0.2);
     box-shadow: 0 0 20px 10px rgba(255, 239, 66, 0.2);
+
+    @media only screen and (max-width: 512px) {
+        width: 200px;
+        height: 200px;
+        border-radius: 120px;
+    }
 `;
 
 const T1 = styled.div`
@@ -44,6 +50,11 @@ const T1 = styled.div`
     color: #444;
     margin: 5px 0;
     line-height: 40px;
+
+    @media only screen and (max-width: 512px) {
+        font-size: 14px;
+        line-height: 25px;
+    }
 `;
 
 const Arrow = styled.img.attrs({

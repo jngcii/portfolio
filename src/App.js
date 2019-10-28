@@ -48,12 +48,28 @@ const Title = styled.div`
     transition: .5s;
     z-index: 1;
 
+    @media only screen and (max-width: 1050px) {
+        font-size: 25px;
+    }
+
     ${props => props.s && `
         height: 50px;
         padding-left: 20px;
         font-size: 25px;
         color: #fafafa;
         background-color: #333;
+
+        @media only screen and (max-width: 1050px) {
+            font-size: 18px;
+        }
+
+        @media only screen and (max-width: 512px) {
+            height: 60px;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0;
+            padding-top: 10px;
+        }
     `};
 `;
 
@@ -66,6 +82,13 @@ const Nav = styled.div`
     display: flex;
     justify-content: flex-end;
     z-index: 2;
+
+    ${props => props.s && `
+        @media only screen and (max-width: 512px) {
+            top: 30px;
+            justify-content: center;
+        }
+    `};
 `;
 
 const Link = styled.a`
@@ -83,6 +106,13 @@ const Link = styled.a`
     ${props => props.s && `
         color: #fafafa;
     `};
+
+    @media only screen and (max-width: 1050px) {
+        font-size: 12px;
+        font-weight: 700;
+        color: #999;
+        margin: 0 7px;
+    }
 `;
 
 
@@ -116,7 +146,7 @@ export default function(){
 
             <Title s={navState==="s"}>{navState==="b" && "This is web developer "} jngcii's Portfolio</Title>
 
-            <Nav>
+            <Nav s={navState==="s"}>
                 <Link s={navState==="s"} href="#introduction">INTRODUCTION</Link>
                 <Link s={navState==="s"} href="#skills">SKILLS</Link>
                 <Link s={navState==="s"} href="#project">PROJECT</Link>
