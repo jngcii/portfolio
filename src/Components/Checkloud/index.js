@@ -25,7 +25,7 @@ const AppName = styled.div`
     color: #333;
     margin-bottom: 10px;
 `;
-const Description = styled.div`
+const Summary = styled.div`
     font-family: 'Prompt', sans-serif;
     font-size: 15px;
     font-weight: 600;
@@ -180,8 +180,8 @@ export default function() {
         <Wrapper>
             <Logo />
             <AppName>Checkloud</AppName>
-            <Description>Innovation of checklist.</Description>
-            <Description>Can save each checklist's item by category and all checklist by date automatically so that you can manage your schedule efficiently.</Description>
+            <Summary>Innovation of checklist.</Summary>
+            <Summary>Can save each checklist's item by category and all checklist by date automatically so that you can manage your schedule efficiently.</Summary>
 
             <Motivation>
                 <MDescContainer>
