@@ -25,7 +25,7 @@ const AppName = styled.div`
     color: #333;
     margin-bottom: 10px;
 `;
-const Discription = styled.div`
+const Description = styled.div`
     font-family: 'Prompt', sans-serif;
     font-size: 15px;
     font-weight: 600;
@@ -91,9 +91,9 @@ export default function() {
         <Wrapper>
             <Logo />
             <AppName>Wink</AppName>
-            <Discription>My first API Project.</Discription>
-            <Discription>Semi-annonymous video chatting application.</Discription>
-            <Discription>If you wanna know who send the short video message, you have to send to him too!</Discription>
+            <Description>My first API Project.</Description>
+            <Description>Semi-annonymous video chatting application.</Description>
+            <Description>If you wanna know who send the short video message, you have to send to him too!</Description>
 
             <Tech>
                 <TTitle>Tech Stack</TTitle>

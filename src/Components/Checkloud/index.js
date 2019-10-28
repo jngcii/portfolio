@@ -25,7 +25,7 @@ const AppName = styled.div`
     color: #333;
     margin-bottom: 10px;
 `;
-const Discription = styled.div`
+const Description = styled.div`
     font-family: 'Prompt', sans-serif;
     font-size: 15px;
     font-weight: 600;
@@ -38,7 +38,7 @@ const Motivation = styled.div`
     justify-content: center;
     margin-top: 30px;
 `;
-const MDiscContainer = styled.div`
+const MDescContainer = styled.div`
     flex: 2;
     display: flex;
     flex-direction: column;
@@ -51,7 +51,7 @@ const MTitle = styled.div`
     color: #333;
     margin: 10px 0;
 `;
-const MDisc = styled.div`
+const MDesc = styled.div`
     font-family: 'Prompt', sans-serif;
     font-size: 17px;
     font-weight: 600;
@@ -101,7 +101,7 @@ const DImage = styled.img`
     height: 500px;
     position: absolute;
 `;
-const DDiscContainer = styled.div`
+const DDescContainer = styled.div`
     flex: 2;
     display: flex;
     flex-direction: column;
@@ -114,7 +114,7 @@ const DTitle = styled.div`
     color: #333;
     margin: 10px 0;
 `;
-const DDisc = styled.div`
+const DDesc = styled.div`
     font-family: 'Prompt', sans-serif;
     font-size: 17px;
     font-weight: 600;
@@ -180,15 +180,15 @@ export default function() {
         <Wrapper>
             <Logo />
             <AppName>Checkloud</AppName>
-            <Discription>Innovation of checklist.</Discription>
-            <Discription>Can save each checklist's item by category and all checklist by date automatically so that you can manage your schedule efficiently.</Discription>
+            <Description>Innovation of checklist.</Description>
+            <Description>Can save each checklist's item by category and all checklist by date automatically so that you can manage your schedule efficiently.</Description>
 
             <Motivation>
-                <MDiscContainer>
+                <MDescContainer>
                     <MTitle>Motivation</MTitle>
-                    <MDisc>We are bored to write same checklist everytime by recursive life.</MDisc>
-                    <MDisc>And also, we used to forget what to do because we just live without ordering our thoughts.</MDisc>
-                </MDiscContainer>
+                    <MDesc>We are bored to write same checklist everytime by recursive life.</MDesc>
+                    <MDesc>And also, we used to forget what to do because we just live without ordering our thoughts.</MDesc>
+                </MDescContainer>
 
                 <PostitContainer>
                     <Postit>
@@ -215,11 +215,11 @@ export default function() {
                     <DImage src={require("../../assets/checkloud-ss1.png")} style={{right: 100, top: 100}} />
                 </DImageContainer>
 
-                <DDiscContainer>
+                <DDescContainer>
                     <DTitle>Description</DTitle>
-                    <DDisc>We can make checklist, then it'll save by date in server automatically. We can reuse it whenever we want.</DDisc>
-                    <DDisc>Each checklist's item also can be saved by category, so we don't need to order our thoughts every time we make schedule.</DDisc>
-                </DDiscContainer>
+                    <DDesc>We can make checklist, then it'll save by date in server automatically. We can reuse it whenever we want.</DDesc>
+                    <DDesc>Each checklist's item also can be saved by category, so we don't need to order our thoughts every time we make schedule.</DDesc>
+                </DDescContainer>
             </Description>
 
             <Tech>
