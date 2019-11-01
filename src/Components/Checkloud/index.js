@@ -1,5 +1,14 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const Move = keyframes`
+0% {
+    transform: translateX(90%)
+}
+100% {
+    transform: translateX(-150%)
+}
+`
 
 const Wrapper = styled.div`
     width: 100%;
@@ -15,7 +24,12 @@ const Logo = styled.img.attrs({
     src: require("../../assets/checkloud-logo.png")
 })`
     width: 80px;
-    margin: 20px auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    @media only screen and (max-width: 1050px) {
+        align-self: flex-start;
+    }
 `;
 
 const AppName = styled.div`
@@ -23,13 +37,26 @@ const AppName = styled.div`
     font-size: 18px;
     font-weight: 800;
     color: #333;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+
+    @media only screen and (max-width: 1050px) {
+        align-self: flex-start;
+    }
 `;
 const Summary = styled.div`
     font-family: 'Prompt', sans-serif;
     font-size: 15px;
     font-weight: 600;
     color: #777;
+
+    @media only screen and (max-width: 1050px) {
+        font-size: 15px;
+        align-self: flex-start;
+    }
+
+    @media only screen and (max-width: 512px) {
+        font-size: 12px;
+    }
 `;
 
 const Motivation = styled.div`
@@ -37,12 +64,24 @@ const Motivation = styled.div`
     display: flex;
     justify-content: center;
     margin-top: 30px;
+
+    @media only screen and (max-width: 1050px) {
+        flex-direction: column;
+    }
+
+    @media only screen and (max-width: 512px) {
+        font-size: 12px;
+    }
 `;
 const MDescContainer = styled.div`
     flex: 2;
     display: flex;
     flex-direction: column;
     padding: 10px;
+
+    @media only screen and (max-width: 1050px) {
+        padding: 0;
+    }
 `;
 const MTitle = styled.div`
     font-family: 'Prompt', sans-serif;
@@ -50,28 +89,50 @@ const MTitle = styled.div`
     font-weight: 800;
     color: #333;
     margin: 10px 0;
+
+    @media only screen and (max-width: 1050px) {
+        font-size: 15px;
+        align-self: flex-start;
+    }
 `;
 const MDesc = styled.div`
     font-family: 'Prompt', sans-serif;
     font-size: 17px;
     font-weight: 600;
     color: #555;
+
+    @media only screen and (max-width: 1050px) {
+        font-size: 15px;
+        align-self: flex-start;
+        color: #777;
+    }
 `;
 const PostitContainer = styled.div`
-    flex: 1;
+    width: 550px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     padding:10px;
+
+    @media only screen and (max-width: 1050px) {
+        width: 100%;
+        justify-content: flex-start;
+    }
 `;
 const Postit = styled.div`
     width: 200px;
     height: 250px;
     display: flex;
     flex-direction: column;
-    padding: 15px;
+    padding: 15px 30px;
     box-shadow: 2px 2px 4px 1px rgba(0,0,0,0.3);
     background-color: #fad82d;
+
+    @media only screen and (max-width: 1050px) {
+        width: 35%;
+        height: 200px;
+        margin-right: 20px;
+    }
 `;
 const CheckItem = styled.div`
     font-family: 'Gochi Hand', cursive;
@@ -83,29 +144,34 @@ const CheckItem = styled.div`
 const Description = styled.div`
     margin-bottom: 30px;
     display: flex;
-    height: 550px;
     align-items: center;
-    top: -60px;
     position: relative;
-`;
-const DImageContainer = styled.div`
-    flex: 2;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    margin-right: 30px;
-`;
-const DImage = styled.img`
-    height: 500px;
-    position: absolute;
+    width: 100%;
+    flex-direction: column;
+
+    @media only screen and (min-width: 1050px) {
+        height: 500px;
+        margin-top: 20px;
+    }
+
+    @media only screen and (max-width: 1050px) {
+        margin-bottom: 20px;
+    }
 `;
 const DDescContainer = styled.div`
-    flex: 2;
     display: flex;
     flex-direction: column;
-    padding: 10px;
+
+    @media only screen and (min-width: 1050px) {
+        width: 50%;
+        align-self: flex-end;
+        padding-top: 100px;
+    }
+
+    @media only screen and (max-width: 1050px) {
+        width: 100%;
+        margin-top: 30px;
+    }
 `;
 const DTitle = styled.div`
     font-family: 'Prompt', sans-serif;
@@ -113,22 +179,73 @@ const DTitle = styled.div`
     font-weight: 800;
     color: #333;
     margin: 10px 0;
+
+    @media only screen and (max-width: 1050px) {
+        font-size: 15px;
+        align-self: flex-start;
+    }
 `;
 const DDesc = styled.div`
     font-family: 'Prompt', sans-serif;
     font-size: 17px;
     font-weight: 600;
     color: #555;
+
+    @media only screen and (max-width: 1050px) {
+        font-size: 15px;
+        align-self: flex-start;
+        color: #777;
+    }
+`;
+const DImageContainer = styled.div`
+    display: flex;
+
+    @media only screen and (min-width: 1050px) {
+        width: 60%;
+        align-self: flex-start;
+        position: absolute;
+    }
+
+    @media only screen and (max-width: 1050px) {
+        overflow: hidden;
+        postision: relative;
+        flex-direction: column;
+    }
+`;
+const DImage2 = styled.img`
+    @media only screen and (min-width: 1050px) {
+        width: 70%;
+        top: 60px;
+        position: absolute;
+    }
+
+    @media only screen and (max-width: 1050px) {
+        width: 100%;
+    }
+`;
+const DImage = styled.img`
+    @media only screen and (min-width: 1050px) {
+        width: 70%;
+        left: -50px;
+        top: -50px;
+        position: absolute;
+    }
+    
+    @media only screen and (max-width: 1050px) {
+        width: 100%;
+    }
 `;
 
 const Tech = styled.div`
-    margin-top: 100px;
     margin-bottom: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    top: -60px;
     position: relative;
+
+    @media only screen and (min-width: 1550px) {
+        margin-top: 200px;
+    }
 `;
 const TTitle = styled.div`
     font-family: 'Prompt', sans-serif;
@@ -136,11 +253,24 @@ const TTitle = styled.div`
     font-weight: 800;
     color: #333;
     margin-bottom: 40px;
+
+    @media only screen and (max-width: 1050px) {
+        font-size: 15px;
+        align-self: flex-start;
+    }
 `;
 const TImg = styled.img.attrs({
     src: require("../../assets/checkloud-tech.png")
 })`
-    width: 90%;
+    @media only screen and (min-width: 1050px) {
+        width: 90%;
+    }
+
+    @media only screen and (max-width: 1050px) {
+        width: 200%;
+        align-self: start;
+        animation: ${Move} 10s infinite linear;
+    }
 `;
 
 const LinkContainer = styled.div`
@@ -181,7 +311,8 @@ export default function() {
             <Logo />
             <AppName>Checkloud</AppName>
             <Summary>Innovation of checklist.</Summary>
-            <Summary>Can save each checklist's item by category and all checklist by date automatically so that you can manage your schedule efficiently.</Summary>
+            <Summary>Can save each checklist's item by category and all checklist by date automatically</Summary>
+            <Summary>so that you can manage your schedule efficiently.</Summary>
 
             <Motivation>
                 <MDescContainer>
@@ -197,9 +328,6 @@ export default function() {
                         <CheckItem>buy milk</CheckItem>
                         <CheckItem>study</CheckItem>
                     </Postit>
-                </PostitContainer>
-
-                <PostitContainer>
                     <Postit>
                         <CheckItem>meet client</CheckItem>
                         <CheckItem>buy eggs</CheckItem>
@@ -210,16 +338,16 @@ export default function() {
             </Motivation>
 
             <Description>
-                <DImageContainer>
-                    <DImage src={require("../../assets/checkloud-ss2.png")} style={{bottom:100}} />
-                    <DImage src={require("../../assets/checkloud-ss1.png")} style={{right: 100, top: 100}} />
-                </DImageContainer>
-
                 <DDescContainer>
                     <DTitle>Description</DTitle>
                     <DDesc>We can make checklist, then it'll save by date in server automatically. We can reuse it whenever we want.</DDesc>
                     <DDesc>Each checklist's item also can be saved by category, so we don't need to order our thoughts every time we make schedule.</DDesc>
                 </DDescContainer>
+
+                <DImageContainer>
+                    <DImage src={require("../../assets/checkloud-ss2.png")} />
+                    <DImage2 src={require("../../assets/checkloud-ss1.png")} />
+                </DImageContainer>
             </Description>
 
             <Tech>

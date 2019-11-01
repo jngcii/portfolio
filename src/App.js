@@ -58,13 +58,13 @@ const Title = styled.div`
     z-index: 1;
 
     @media only screen and (max-width: 1050px) {
-        font-size: 25px;
+        font-size: 23px;
     }
 
     ${props => props.s && `
         height: 50px;
         padding-left: 20px;
-        font-size: 25px;
+        font-size: 23px;
         color: #fafafa;
         background-color: #333;
 
