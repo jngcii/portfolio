@@ -55,6 +55,7 @@ const SelectColumn = styled.div`
     font-weight: ${props => props.isCurrent ? "700" : "500"};
     color: ${props => props.isCurrent ? "#333" : "#aaa"};
     transition: .5s;
+    cursor: pointer;
 `;
 
 const Divider = styled.div`

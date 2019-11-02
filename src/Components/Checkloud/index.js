@@ -280,7 +280,9 @@ const LinkContainer = styled.div`
     align-items: center;
     justify-content: center;
 `;
-const Link = styled.a`
+const Link = styled.a.attrs({
+    target: "_blank"
+})`
     margin: 10px;
     padding: 10px;
     height: 40px;
