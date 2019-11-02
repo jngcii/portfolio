@@ -1,5 +1,14 @@
 import React from "react";
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
+
+const Move = keyframes`
+    0% {
+        transform: translateX(90%)
+    }
+    100% {
+        transform: translateX(-130%)
+    }
+`;
 
 const Wrapper = styled.div`
     width: 100%;
@@ -15,7 +24,12 @@ const Logo = styled.img.attrs({
     src: require("../../assets/wink-icon.png")
 })`
     width: 80px;
-    margin: 20px auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    @media only screen and (max-width: 1050px) {
+        align-self: flex-start;
+    }
 `;
 
 const AppName = styled.div`
@@ -24,12 +38,21 @@ const AppName = styled.div`
     font-weight: 800;
     color: #333;
     margin-bottom: 10px;
+
+    @media only screen and (max-width: 1050px) {
+        align-self: flex-start;
+    }
 `;
 const Description = styled.div`
     font-family: 'Prompt', sans-serif;
     font-size: 15px;
     font-weight: 600;
     color: #777;
+
+    @media only screen and (max-width: 1050px) {
+        font-size: 15px;
+        align-self: flex-start;
+    }
 `;
 
 const Tech = styled.div`
@@ -47,11 +70,26 @@ const TTitle = styled.div`
     font-weight: 800;
     color: #333;
     margin-bottom: 40px;
+
+    @media only screen and (max-width: 1050px) {
+        font-size: 15px;
+        align-self: flex-start;
+    }
 `;
 const TImg = styled.img.attrs({
     src: require("../../assets/wink-tech.png")
 })`
     width: 60%;
+
+    @media only screen and (min-width: 1050px) {
+        width: 90%;
+    }
+
+    @media only screen and (max-width: 1050px) {
+        width: 200%;
+        align-self: start;
+        animation: ${Move} 7s infinite linear;
+    }
 `;
 
 const LinkContainer = styled.div`

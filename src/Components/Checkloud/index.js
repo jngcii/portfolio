@@ -2,13 +2,13 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 
 const Move = keyframes`
-0% {
-    transform: translateX(90%)
-}
-100% {
-    transform: translateX(-150%)
-}
-`
+    0% {
+        transform: translateX(90%)
+    }
+    100% {
+        transform: translateX(-130%)
+    }
+`;
 
 const Wrapper = styled.div`
     width: 100%;
