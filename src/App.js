@@ -116,8 +116,18 @@ const Link = styled.a`
     transition: .5s;
     text-decoration: none;
 
+    :hover{
+        font-weight: 900;
+        color: #111;
+        font-size: 16px;
+    }
+
     ${props => props.s && `
         color: #fafafa;
+
+        :hover{
+            color: #fff;
+        }
     `};
 
     @media only screen and (max-width: 1050px) {
@@ -125,6 +135,13 @@ const Link = styled.a`
         font-weight: 700;
         color: #999;
         margin: 0 7px;
+
+
+        :hover{
+            font-weight: 900;
+            color: #111;
+            font-size: 13px;
+        }
     }
 `;
 
