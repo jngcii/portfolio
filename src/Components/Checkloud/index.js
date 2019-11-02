@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
 import styled, { keyframes } from "styled-components";
+import Typing from 'react-typing-animation';
 
 const Move = keyframes`
     0% {
@@ -109,6 +110,7 @@ const MDesc = styled.div`
 `;
 const PostitContainer = styled.div`
     width: 550px;
+    height: 400px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -129,7 +131,7 @@ const Postit = styled.div`
     background-color: #fad82d;
 
     @media only screen and (max-width: 1050px) {
-        width: 35%;
+        width: 130px;
         height: 200px;
         margin-right: 20px;
     }
@@ -306,6 +308,7 @@ const Git = styled.div`
 `;
 
 export default function() {
+    const [memo, setMemo] = useState(1);
     return (
         <Wrapper>
             <Logo />
@@ -322,18 +325,34 @@ export default function() {
                 </MDescContainer>
 
                 <PostitContainer>
-                    <Postit>
-                        <CheckItem>meet client</CheckItem>
-                        <CheckItem>buy eggs</CheckItem>
-                        <CheckItem>buy milk</CheckItem>
-                        <CheckItem>study</CheckItem>
-                    </Postit>
-                    <Postit>
-                        <CheckItem>meet client</CheckItem>
-                        <CheckItem>buy eggs</CheckItem>
-                        <CheckItem>buy milk</CheckItem>
-                        <CheckItem>study</CheckItem>
-                    </Postit>
+                    {memo >= 1 && (
+                        <Typing speed={30} onFinishedTyping={()=>setMemo(memo+1)}>
+                            <Postit>
+                                <CheckItem>meet client</CheckItem>
+                                <CheckItem>buy eggs</CheckItem>
+                                <CheckItem>buy milk</CheckItem>
+                                <CheckItem>study O/S</CheckItem>
+                            </Postit>
+                        </Typing>
+                    )}
+
+
+                    {memo >= 2 && (
+                        <Typing speed={30} onFinishedTyping={()=>{
+                            setMemo(memo+1);
+                            setTimeout(()=>{
+                                setMemo(0);
+                                setTimeout(()=>setMemo(1), 200)
+                            }, 1000);
+                        }}>
+                            <Postit>
+                                <CheckItem>meet client</CheckItem>
+                                <CheckItem>buy eggs</CheckItem>
+                                <CheckItem>buy milk</CheckItem>
+                                <CheckItem>....?</CheckItem>
+                            </Postit>
+                        </Typing>
+                    )}
                 </PostitContainer>
             </Motivation>
 
