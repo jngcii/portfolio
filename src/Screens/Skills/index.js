@@ -172,8 +172,8 @@ const ASummary = styled.div`
     font-size: 14px;
     font-weight: 900;
     color: #e3c934;
-    margin-bottom: 10px;
     align-self: center;
+    margin: 10px;
 `;
 
 const ABig = styled.div`
