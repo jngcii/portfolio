@@ -25,7 +25,7 @@ const MainWrapper = styled.div`
     font-size: 40px;
     color: #333;
     background-color: #fafafa;
-    transition: .2s;
+    transition: .4s;
     z-index: 3;
 
     @media only screen and (max-width: 1050px) {
