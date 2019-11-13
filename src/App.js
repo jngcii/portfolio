@@ -13,35 +13,7 @@ const Wrapper = styled.div`
     overflow: hidden;
 `;
 
-const Avatar = styled.img.attrs({
-    src: require("./assets/avatar.png")
-})`
-    position: fixed;
-    width: 30vw;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    z-index: 2;
-    transition: .5s linear;
-    right:0;
-    bottom: 0;
-
-    @media only screen and (max-width: 512px) {
-        width: 50vw;
-    }
-
-    ${props => props.s && `
-        right: -30vw;
-        bottom: -30vw;
-
-        @media only screen and (max-width: 512px) {
-            right: -50vw;
-            bottom: -50vw;
-        }
-    `};
-`;
-
-const Title = styled.div`
+const MainWrapper = styled.div`
     position: fixed;
     top: 0;
     left: 0;
@@ -49,35 +21,86 @@ const Title = styled.div`
     height: 100vh;
     display: flex;
     align-items: center;
-    padding-left: 50px;
-    font-family: 'Luckiest Guy', cursive;
-    font-size: 50px;
+    font-family: 'Prompt', sans-serif;
+    font-size: 40px;
     color: #333;
     background-color: #fafafa;
-    transition: .5s;
-    z-index: 1;
+    transition: .2s;
+    z-index: 3;
 
     @media only screen and (max-width: 1050px) {
         font-size: 23px;
+        flex-direction: column;
+        justify-content: center;
     }
 
     ${props => props.s && `
         height: 50px;
         padding-left: 20px;
-        font-size: 23px;
-        color: #fafafa;
         background-color: #333;
 
         @media only screen and (max-width: 1050px) {
-            font-size: 18px;
-        }
-
-        @media only screen and (max-width: 512px) {
-            height: 60px;
-            justify-content: center;
-            align-items: flex-start;
+            height: 70px;
+            flex-direction: column;
             padding: 0;
+            justify-content: flex-start;
             padding-top: 10px;
+        }
+    `};
+`;
+
+const Avatar = styled.img.attrs({
+    src: require("./assets/avatar.png")
+})`
+    width: 160px;
+    margin: 0 20px;
+    transition: .2s;
+    user-select: none;
+
+    ${props => props.s && `
+        width: 0;
+        height: 0;
+        margin: 0;
+    `};
+`;
+
+const Title = styled.div`
+    font-family: 'Prompt', sans-serif;
+    font-size: 28px;
+    color: #555;
+    transition: .2s;
+    z-index: 1;
+    margin-top: 1px;
+    margin-bottom:1px;
+    user-select: none;
+
+    @media only screen and (max-width: 1050px) {
+        font-size: 21px;
+    }
+
+    ${props => props.s && `
+        font-size: 21px;
+        color: #fafafa;
+
+        @media only screen and (max-width: 1050px) {
+            font-size: 20px;
+        }
+    `};
+`;
+const Name = styled(Title)`
+    font-size: 36px;
+    user-select: none;
+
+    @media only screen and (max-width: 612px) {
+        font-size: 25px;
+    }
+
+    ${props => props.s && `
+        font-size: 21px;
+        color: #fafafa;
+
+        @media only screen and (max-width: 612px) {
+            font-size: 20px;
         }
     `};
 `;
@@ -90,14 +113,14 @@ const Nav = styled.div`
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    z-index: 2;
+    z-index: 5;
 
-    @media only screen and (max-width: 512px) {
+    @media only screen and (max-width: 1050px) {
         justify-content: center;
     }
 
     ${props => props.s && `
-        @media only screen and (max-width: 512px) {
+        @media only screen and (max-width: 1050px) {
             top: 30px;
             justify-content: center;
         }
@@ -113,8 +136,9 @@ const Link = styled.a`
     font-size: 15px;
     font-weight: 400;
     color: #555;
-    transition: .5s;
+    transition: .2s;
     text-decoration: none;
+    user-select: none;
 
     :hover{
         font-weight: 900;
@@ -167,14 +191,38 @@ export default function(){
         if(scrollTop < 100) setNavState("b");
         else if(scrollTop >= 100) setNavState("s");
       });
+
+      return () => {
+        window.removeEventListener('scroll');
+      };
     },[])
 
     return (
         <Wrapper>
-            <Avatar s={navState==="s"} />
-            
+            <MainWrapper s={navState==="s"}>
+                <Avatar s={navState==="s"}/>
 
-            <Title s={navState==="s"}>{navState==="b" && "This is web developer "} jngcii's Portfolio</Title>
+                {navState==="b" && (
+                    <Title s={navState==="s"}>
+                        This is &nbsp;
+                    </Title>
+                )}
+
+                {navState==="b" && (
+                <Title s={navState==="s"}>
+                    Web Developer &nbsp;
+                </Title>
+                )}
+
+                <Title style={{display:"flex", alignItems:"center"}}>
+                    <Name s={navState==="s"} style={{color: "#fad82d", fontWeight: "900"}}>
+                        Hyung Soo
+                    </Name>
+                    <Title s={navState==="s"}>
+                        's Portfolio
+                    </Title>
+                </Title>
+            </MainWrapper>
 
             <Nav s={navState==="s"}>
                 <Link s={navState==="s"} href="#introduction">INTRODUCTION</Link>
