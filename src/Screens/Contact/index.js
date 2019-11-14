@@ -6,30 +6,9 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding-bottom: 20px;
-    padding-top: 35px;
+    padding-bottom: 35px;
+    padding-top: 20px;
     background-color: #efefef;
-`;
-
-const Header = styled.div`
-    width: 100%;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-`;
-
-const Title = styled.div`
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-family: 'Prompt', sans-serif;
-    font-size: 30px;
-    font-weight: 900;
-    color: #333;
 `;
 
 const Body = styled.div`
@@ -39,31 +18,6 @@ const Body = styled.div`
     align-items: center;
     justify-content: space-evenly;
     margin-top: 20px;
-`;
-
-const Container = styled.div`
-    flex: 1;
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    margin-bottom: 40px;
-`;
-const Img = styled.img.attrs({
-    src: require("../../assets/profile.jpg")
-})`
-    width: 180px;
-    height: 180px;
-    border-radius: 90px;
-`;
-const Name = styled.div`
-    font-family: 'Prompt', sans-serif;
-    font-size: 23px;
-    font-weight: 600;
-    color: #333;
-    margin-top: 10px;
 `;
 
 const LinkContainer = styled.a`
@@ -101,25 +55,11 @@ const DomainContainer = styled.div`
     font-weight: 500;
     color: #2091f5;
 `;
-
-const Footer = styled.div`
-    height: 50px;
-`;
-
-
 export default function() {
 
     return (
         <Wrapper id="contact">
-            {/* <Header>
-                <Title>Contact</Title>
-            </Header> */}
-
             <Body>
-                {/* <Container>
-                    <Img />
-                    <Name>Jung Hyung Soo</Name>
-                </Container> */}
 
                 <LinkContainer href="https://github.com/jngcii" target="_blank">
                     <IconCotainer>
@@ -135,8 +75,6 @@ export default function() {
                     <DomainContainer style={{cursor: "text"}}>concotree@gmail.com</DomainContainer>
                 </LinkContainer>
             </Body>
-
-            <Footer />
         </Wrapper>
     );
 }
