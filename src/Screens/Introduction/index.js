@@ -58,7 +58,6 @@ const Container = styled.div`
 `;
 
 const T1 = styled.div`
-    align-self: flex-start;
     font-family: 'Prompt', sans-serif;
     font-size: 22px;
     font-weight: 900;
@@ -89,7 +88,7 @@ export default function() {
             </ImgContainer>
 
             <Container>
-                <T1>Welcome to my desk.</T1>
+                <T1>Welcome to my portfolio.</T1>
                 <T1>I'm web developer Hyungsoo.</T1>
                 <T1 style={{marginBottom: 40}}>Let me introduce myself.</T1>
                 <Arrow style={{tintColor: "#ddd"}} />

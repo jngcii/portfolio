@@ -361,7 +361,7 @@ export default function() {
             <Description>
                 <DDescContainer>
                     <DTitle>Description</DTitle>
-                    <DDesc>We can make checklist, then it'll save by date in server automatically. We can reuse it whenever we want.</DDesc>
+                    <DDesc>We can make checklist, then it'll be saved by date in server automatically. We can reuse it whenever we want.</DDesc>
                     <DDesc>Each checklist's item also can be saved by category, so we don't need to order our thoughts every time we make schedule.</DDesc>
                 </DDescContainer>
 
