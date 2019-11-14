@@ -144,7 +144,6 @@ const CheckItem = styled.div`
 `;
 
 const Description = styled.div`
-    margin-bottom: 30px;
     display: flex;
     align-items: center;
     position: relative;
@@ -241,39 +240,72 @@ const DImage = styled.img`
 const Tech = styled.div`
     margin-bottom: 80px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     position: relative;
+    width: 100%;
 
-    @media only screen and (min-width: 1550px) {
-        margin-top: 200px;
+    @media only screen and (min-width: 1050px) {
+        margin-top: 100px;
     }
+
+    @media only screen and (max-width: 1050px) {
+        margin-top: 100px;
+    }
+`;
+const TTitleContainer = styled.div`
+
+    @media only screen and (min-width: 1050px) {
+        flex:1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @media only screen and (max-width: 1050px) {
+    }
+    
 `;
 const TTitle = styled.div`
     font-family: 'Prompt', sans-serif;
     font-size: 20px;
     font-weight: 800;
     color: #333;
-    margin-bottom: 40px;
+    vertical-align: center;
 
     @media only screen and (max-width: 1050px) {
         font-size: 15px;
         align-self: flex-start;
     }
 `;
-const TImg = styled.img.attrs({
-    src: require("../../assets/checkloud-tech.png")
-})`
+const TContent = styled.div`
+
     @media only screen and (min-width: 1050px) {
-        width: 90%;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
     }
 
     @media only screen and (max-width: 1050px) {
-        width: 200%;
-        align-self: start;
-        animation: ${Move} 10s infinite linear;
     }
 `;
+const TRow = styled.div`
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+`;
+const TImg = styled.img`
+    width: 60px;
+    margin: 0 15px;
+`;
+const TText = styled.div`
+    font-family: 'Prompt', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: #555;
+`;
+
 
 const LinkContainer = styled.div`
     display: flex;
@@ -285,19 +317,11 @@ const Link = styled.a.attrs({
 })`
     margin: 10px;
     padding: 10px;
-    height: 40px;
-    width: 200px;
-    border-radius: 25px;
-    background-color: #efefef;
-    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+    height: 30px;
+    width: 230px;
     display: flex;
     align-items: center;
     text-decoration: none;
-`;
-const GitIcon = styled.img.attrs({
-    src: require("../../assets/github.png")
-})`
-    height:40px;
 `;
 const Git = styled.div`
     flex: 1;
@@ -306,7 +330,7 @@ const Git = styled.div`
     font-family: 'Prompt', sans-serif;
     font-size: 17px;
     font-weight: 700;
-    color: #333;
+    color: #349eeb;
 `;
 
 export default function() {
@@ -314,10 +338,21 @@ export default function() {
     return (
         <Wrapper>
             <Logo />
+
             <AppName>Checkloud</AppName>
             <Summary>Innovation of checklist.</Summary>
             <Summary>Can save each checklist's item by category and all checklist by date automatically</Summary>
             <Summary>so that you can manage your schedule efficiently.</Summary>
+
+            <LinkContainer>
+                <Link href="https://github.com/jngcii/checkloud-api">
+                    <Git>API-Server Github Link</Git>
+                </Link>
+
+                <Link href="https://github.com/jngcii/checkloud">
+                    <Git>Client Github Link</Git>
+                </Link>
+            </LinkContainer>
 
             <Motivation>
                 <MDescContainer>
@@ -372,21 +407,28 @@ export default function() {
             </Description>
 
             <Tech>
-                <TTitle>Tech Stack</TTitle>
-                <TImg />
+                <TTitleContainer>
+                    <TTitle>Tech Stack</TTitle>
+                </TTitleContainer>
+
+                <TContent>
+                    <TRow>
+                        <TText>Client</TText>
+                        <TImg src={require('../../assets/js-img.png')} />
+                        <TImg src={require("../../assets/react-native-img.png")} />
+                        <TImg src={require("../../assets/apollo-client-img.png")} />
+                    </TRow>
+
+                    <TRow>
+                        <TText>Server</TText>
+                        <TImg src={require("../../assets/nginx-img.png")} />
+                        <TImg src={require("../../assets/node-img.png")} />
+                        <TImg src={require("../../assets/express-img.png")} />
+                        <TImg src={require("../../assets/graphql-img.png")} />
+                        <TImg src={require("../../assets/psql-img.png")} />
+                    </TRow>
+                </TContent>
             </Tech>
-
-            <LinkContainer>
-                <Link href="https://github.com/jngcii/checkloud-api">
-                    <GitIcon />
-                    <Git>API-Server</Git>
-                </Link>
-
-                <Link href="https://github.com/jngcii/checkloud">
-                    <GitIcon />
-                    <Git>Client</Git>
-                </Link>
-            </LinkContainer>
         </Wrapper>
     );
 }

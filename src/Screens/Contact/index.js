@@ -6,8 +6,8 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding-bottom: 50px;
-    padding-top: 50px;
+    padding-bottom: 20px;
+    padding-top: 35px;
     background-color: #efefef;
 `;
 
@@ -33,12 +33,11 @@ const Title = styled.div`
 `;
 
 const Body = styled.div`
-    height: 360px;
     width: 900px;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     margin-top: 20px;
 `;
 
@@ -112,15 +111,15 @@ export default function() {
 
     return (
         <Wrapper id="contact">
-            <Header>
+            {/* <Header>
                 <Title>Contact</Title>
-            </Header>
+            </Header> */}
 
             <Body>
-                <Container>
+                {/* <Container>
                     <Img />
                     <Name>Jung Hyung Soo</Name>
-                </Container>
+                </Container> */}
 
                 <LinkContainer href="https://github.com/jngcii" target="_blank">
                     <IconCotainer>

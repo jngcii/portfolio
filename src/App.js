@@ -216,7 +216,7 @@ export default function(){
 
                 <Title style={{display:"flex", alignItems:"center"}}>
                     <Name s={navState==="s"} style={{color: "#fad82d", fontWeight: "900"}}>
-                        Hyung Soo
+                        HyungSoo
                     </Name>
                     <Title s={navState==="s"}>
                         's Portfolio
