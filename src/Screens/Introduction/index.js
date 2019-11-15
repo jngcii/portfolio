@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import styled, {keyframes} from "styled-components";
 
 const move = keyframes`
@@ -17,6 +17,7 @@ const Wrapper = styled.div`
 `;
 
 const ImgContainer = styled.div`
+    position: relative;
     width: 100%;
     height: 60vh;
     background-color: #333;
@@ -33,6 +34,45 @@ const Img = styled.img.attrs({
     top: -100px;
     width: 75%;
     max-width: 800px;
+`;
+
+const ImgContent = styled.div`
+    bottom: 100px;
+    position: absolute;
+    width: 75%;
+    max-width: 800px;
+    display: flex;
+    align-items: flex-end;
+`;
+
+const Column1 = styled.div`
+    flex:3;
+    height: 13vw;
+    max-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`;
+const Clock = styled.div`
+    font-size: 2vw;
+    font-weight: 800;
+
+    @media only screen and (min-width: 1080px) {
+        font-size: 25px;
+    }
+
+    @media only screen and (max-width: 700px) {
+        font-size: 12px;
+    }
+`;
+const Column2 = styled.div`
+    flex:5;
+    height: 25vw;
+    max-height: 270px;
+    // background-color: yellow;
+    opacity: 0.3;
+    z-index: 11;
 `;
 
 const Container = styled.div`
@@ -81,10 +121,43 @@ const Arrow = styled.img.attrs({
 
 
 export default function() {
+    const [time, setTime] = useState(null);
+
+    const updateTime = function () {
+        const currentDate=new Date();
+        let apm=currentDate.getHours();
+        if(apm<12)
+        {
+            apm="am";
+        }
+        else
+        {
+            apm="pm";
+        }
+        
+        const msg = apm + " " + (currentDate.getHours()-12)+":"+currentDate.getMinutes();
+
+        setTime(msg)
+        
+        setTimeout(updateTime,60000);
+    };
+
+    useEffect(()=>{
+        updateTime()
+    }, [])
+
     return(
         <Wrapper id="introduction">
             <ImgContainer>
                 <Img />
+
+                <ImgContent>
+                    <Column1 />
+                    <Column2 />
+                    <Column1>
+                        <Clock>{time}</Clock>
+                    </Column1>
+                </ImgContent>
             </ImgContainer>
 
             <Container>
