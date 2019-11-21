@@ -6,6 +6,196 @@ const move = keyframes`
     to { margin-top: 50px; }
 `;
 
+const line1 = keyframes`
+    0% {
+        width: 40%;
+        opacity: 0.9;
+    }
+    20% {
+        width: 60%;
+        opacity: 0.5;
+    }
+    40% {
+        width: 30%;
+        opacity: 0.7;
+    }
+    60% {
+        width: 70%;
+        opacity: 0.4;
+    }
+    80% {
+        width: 50%;
+        opacity: 0.5;
+    }
+    100% {
+        width: 40%;
+        opacity: 0.9;
+    }
+`;
+
+const line2 = keyframes`
+    0% {
+        width: 30%;
+        opacity: 0.7;
+    }
+    20% {
+        width: 90%;
+        opacity: 0.4;
+    }
+    40% {
+        width: 60%;
+        opacity: 0.5;
+    }
+    60% {
+        width: 60%;
+        opacity: 0.7;
+    }
+    80% {
+        width: 40%;
+        opacity: 0.9;
+    }
+    100% {
+        width: 30%;
+        opacity: 0.7;
+    }
+`;
+
+const line3 = keyframes`
+    0% {
+        width: 70%;
+        opacity: 0.4;
+    }
+    10% {
+        width: 50%;
+        opacity: 0.5;
+    }
+    30% {
+        width: 60%;
+        opacity: 0.7;
+    }
+    50% {
+        width: 40%;
+        opacity: 0.9;
+    }
+    70% {
+        width: 60%;
+        opacity: 0.5;
+    }
+    100% {
+        width: 70%;
+        opacity: 0.4;
+    }
+`;
+
+const line4 = keyframes`
+    0% {
+        width: 60%;
+        opacity: 0.7;
+    }
+    20% {
+        width: 40%;
+        opacity: 0.9;
+    }
+    50% {
+        width: 60%;
+        opacity: 0.5;
+    }
+    70% {
+        width: 30%;
+        opacity: 0.7;
+    }
+    90% {
+        width: 90%;
+        opacity: 0.4;
+    }
+    100% {
+        width: 60%;
+        opacity: 0.7;
+    }
+`;
+
+const line5 = keyframes`
+    0% {
+        width: 40%;
+        opacity: 0.9;
+    }
+    20% {
+        width: 60%;
+        opacity: 0.5;
+    }
+    40% {
+        width: 30%;
+        opacity: 0.7;
+    }
+    60% {
+        width: 80%;
+        opacity: 0.4;
+    }
+    80% {
+        width: 50%;
+        opacity: 0.5;
+    }
+    100% {
+        width: 40%;
+        opacity: 0.9;
+    }
+`;
+
+const line6 = keyframes`
+    0% {
+        width: 20%;
+        opacity: 0.2;
+    }
+    20% {
+        width: 90%;
+        opacity: 0.9;
+    }
+    40% {
+        width: 50%;
+        opacity: 0.7;
+    }
+    60% {
+        width: 70%;
+        opacity: 0.4;
+    }
+    80% {
+        width: 80%;
+        opacity: 0.5;
+    }
+    100% {
+        width: 20%;
+        opacity: 0.2;
+    }
+`;
+
+const line7 = keyframes`
+    0% {
+        width: 50%;
+        opacity: 0.4;
+    }
+    10% {
+        width: 70%;
+        opacity: 0.3;
+    }
+    20% {
+        width: 80%;
+        opacity: 0.9;
+    }
+    50% {
+        width: 50%;
+        opacity: 0.2;
+    }
+    70% {
+        width: 20%;
+        opacity: 0.2;
+    }
+    100% {
+        width: 50%;
+        opacity: 0.4;
+    }
+`;
+
+
 const Wrapper = styled.div`
     width: 100%;
     display: flex;
@@ -70,10 +260,50 @@ const Column2 = styled.div`
     flex:5;
     height: 25vw;
     max-height: 270px;
-    // background-color: yellow;
-    opacity: 0.3;
-    z-index: 11;
+    display: flex;
+    flex-direction: column;
+    opacity: 0.8;
 `;
+
+const Code = styled.div`
+    margin-left: 15%;
+    width: 70%;
+    height: 5.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+`;
+
+const CodeLine1 = styled.div`
+    height: 2px;
+    background-color: yellow;
+    animation: ${line1} 3s infinite;
+`;
+
+const CodeLine2 = styled(CodeLine1)`
+    animation: ${line2} 2.2s infinite;
+`;
+
+const CodeLine3 = styled(CodeLine1)`
+    animation: ${line3} 2s infinite;
+`;
+
+const CodeLine4 = styled(CodeLine1)`
+    animation: ${line4} 2.5s infinite;
+`;
+
+const CodeLine5 = styled(CodeLine1)`
+    animation: ${line5} 1.5s infinite;
+`;
+
+const CodeLine6 = styled(CodeLine1)`
+    animation: ${line6} 3s infinite;
+`;
+
+const CodeLine7 = styled(CodeLine1)`
+    animation: ${line7} 2s infinite;
+`;
+
 
 const Container = styled.div`
     position: relative;
@@ -128,11 +358,11 @@ export default function() {
         let apm=currentDate.getHours();
         if(apm<12)
         {
-            apm="am";
+            apm="a.m";
         }
         else
         {
-            apm="pm";
+            apm="p.m";
         }
         
         const msg = apm + " " + (currentDate.getHours()-12)+":"+currentDate.getMinutes();
@@ -144,7 +374,7 @@ export default function() {
 
     useEffect(()=>{
         updateTime()
-    }, [])
+    })
 
     return(
         <Wrapper id="introduction">
@@ -153,7 +383,47 @@ export default function() {
 
                 <ImgContent>
                     <Column1 />
-                    <Column2 />
+
+                    <Column2>
+                        <Code />
+                        <Code />
+                        <Code>
+                            <CodeLine1 />
+                        </Code>
+
+                        <Code>
+                            <CodeLine2 />
+                        </Code>
+
+                        <Code>
+                            <CodeLine3 />
+                        </Code>
+
+                        <Code>
+                            <CodeLine4 />
+                        </Code>
+
+                        <Code>
+                            <CodeLine5 />
+                        </Code>
+
+                        <Code>
+                            <CodeLine6 />
+                        </Code>
+
+                        <Code>
+                            <CodeLine7 />
+                        </Code>
+
+                        <Code>
+                            <CodeLine1 />
+                        </Code>
+
+                        <Code>
+                            <CodeLine4 />
+                        </Code>
+                    </Column2>
+
                     <Column1>
                         <Clock>{time}</Clock>
                     </Column1>

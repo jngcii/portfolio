@@ -2,14 +2,14 @@ import React, {useState} from "react";
 import styled, { keyframes } from "styled-components";
 import Typing from 'react-typing-animation';
 
-const Move = keyframes`
-    0% {
-        transform: translateX(90%)
-    }
-    100% {
-        transform: translateX(-130%)
-    }
-`;
+// const Move = keyframes`
+//     0% {
+//         transform: translateX(90%)
+//     }
+//     100% {
+//         transform: translateX(-130%)
+//     }
+// `;
 
 const Wrapper = styled.div`
     width: 100%;
