@@ -1,15 +1,6 @@
 import React, {useState} from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import Typing from 'react-typing-animation';
-
-// const Move = keyframes`
-//     0% {
-//         transform: translateX(90%)
-//     }
-//     100% {
-//         transform: translateX(-130%)
-//     }
-// `;
 
 const Wrapper = styled.div`
     width: 100%;
@@ -243,13 +234,10 @@ const Tech = styled.div`
     align-items: center;
     position: relative;
     width: 100%;
-
-    @media only screen and (min-width: 1050px) {
-        margin-top: 100px;
-    }
+    margin-top: 100px;
 
     @media only screen and (max-width: 1050px) {
-        margin-top: 100px;
+        flex-direction: column;
     }
 `;
 const TTitleContainer = styled.div`
@@ -262,6 +250,7 @@ const TTitleContainer = styled.div`
     }
 
     @media only screen and (max-width: 1050px) {
+        height: 100px;
     }
     
 `;
@@ -271,39 +260,57 @@ const TTitle = styled.div`
     font-weight: 800;
     color: #333;
     vertical-align: center;
-
-    @media only screen and (max-width: 1050px) {
-        font-size: 15px;
-        align-self: flex-start;
-    }
 `;
 const TContent = styled.div`
+    padding: 10px 20px;
+    background-color: #fafafa;
+    border-radius: 10px;
+    box-shadow: 0 0 3px 1px rgba(0,0,0,0.3);
 
     @media only screen and (min-width: 1050px) {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        padding: 30px;
+        flex: 2;
     }
-
+    
     @media only screen and (max-width: 1050px) {
+        width: 90%;
     }
 `;
-const TRow = styled.div`
+
+const TSubTitleContainer = styled.div`
     width: 100%;
-    height: 80px;
+    height: 40px;
     display: flex;
     align-items: center;
+    border-bottom-style: solid;
+    border-bottom-color: #eee;
+    border-bottom-width: 1px;
+    margin-bottom: 10px;
+`;
+const TSubTitle = styled.div`
+    font-family: 'Prompt', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
 `;
 const TImg = styled.img`
-    width: 60px;
-    margin: 0 15px;
+    float: left;
+    height: 25px;
+    
+    @media only screen and (max-width: 1050px) {
+        height: 20px;
+    }
 `;
 const TText = styled.div`
     font-family: 'Prompt', sans-serif;
     font-size: 17px;
-    font-weight: 600;
+    font-weight: 400;
     color: #555;
+    line-height: 25px;
+    margin-bottom: 15px;
+    
+    @media only screen and (max-width: 1050px) {
+        font-size: 14px;
+        line-height: 20px;
+    }
 `;
 
 
@@ -412,21 +419,32 @@ export default function() {
                 </TTitleContainer>
 
                 <TContent>
-                    <TRow>
-                        <TText>Client</TText>
-                        <TImg src={require('../../assets/js-img.png')} />
-                        <TImg src={require("../../assets/react-native-img.png")} />
-                        <TImg src={require("../../assets/apollo-client-img.png")} />
-                    </TRow>
+                    <TSubTitleContainer>
+                        <TSubTitle>Client</TSubTitle>
+                    </TSubTitleContainer>
 
-                    <TRow>
-                        <TText>Server</TText>
-                        <TImg src={require("../../assets/nginx-img.png")} />
-                        <TImg src={require("../../assets/node-img.png")} />
-                        <TImg src={require("../../assets/express-img.png")} />
-                        <TImg src={require("../../assets/graphql-img.png")} />
-                        <TImg src={require("../../assets/psql-img.png")} />
-                    </TRow>
+                    <TImg src={require("../../assets/react-native-img.png")} />
+                    <TText>&nbsp; React Native  :  I used react native javascript library to build mobile application front-end.</TText>
+
+                    <TImg src={require("../../assets/apollo-client-img.png")} />
+                    <TText>&nbsp; Apollo Client  :  Apollo client is used for react state management and caching.</TText>
+                    
+
+                    <TSubTitleContainer style={{ marginTop: 20 }}>
+                        <TSubTitle>Server</TSubTitle>
+                    </TSubTitleContainer>
+
+                    <TImg src={require("../../assets/nginx-img.png")} />
+                    <TText>&nbsp; NginX  :  NginX web server is running in linux ubuntu 16.04 LTS. It's used for reverse proxy server and load balancer.</TText>
+
+                    <TImg src={require("../../assets/node-img.png")} />
+                    <TText>&nbsp; Node.js  :  Server side environment is node.js.</TText>
+
+                    <TImg src={require("../../assets/express-img.png")} />
+                    <TText>&nbsp; Express.js  :  Express is chosen for framework because it's light and efficient to transport only text data.</TText>
+
+                    <TImg src={require("../../assets/graphql-img.png")} />
+                    <TText>&nbsp; GraphQL  :  I used GraphQL API with express framework, not Rest-API.</TText>
                 </TContent>
             </Tech>
         </Wrapper>
