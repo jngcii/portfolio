@@ -18,6 +18,10 @@ const Body = styled.div`
     align-items: center;
     justify-content: space-evenly;
     margin-top: 20px;
+    
+    @media only screen and (max-width: 1050px) {
+        flex-direction: column;
+    }
 `;
 
 const LinkContainer = styled.a`
@@ -42,25 +46,39 @@ const GitIcon = styled.img.attrs({
     width: 40px;
     height: 40px;
     cursor: pointer;
+    
+    @media only screen and (max-width: 1050px) {
+        width: 30px;
+        height: 30px;
+    }
 `;
 const GmailIcon = styled.img.attrs({
     src: require("../../assets/gmail.png")
 })`
     width: 40px;
     height: 40px;
+    cursor: pointer;
+    
+    @media only screen and (max-width: 1050px) {
+        width: 30px;
+        height: 30px;
+    }
 `;
 const DomainContainer = styled.div`
     width: 240px;
     font-size: 18px;
     font-weight: 500;
     color: #2091f5;
+    
+    @media only screen and (max-width: 1050px) {
+        font-size: 16px;
+    }
 `;
 export default function() {
 
     return (
         <Wrapper id="contact">
             <Body>
-
                 <LinkContainer href="https://github.com/jngcii" target="_blank">
                     <IconCotainer>
                         <GitIcon />
