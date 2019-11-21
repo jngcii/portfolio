@@ -315,20 +315,36 @@ const TText = styled.div`
 
 
 const LinkContainer = styled.div`
+    margin-top: 30px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    
+    @media only screen and (max-width: 1050px) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 `;
 const Link = styled.a.attrs({
     target: "_blank"
 })`
-    margin: 10px;
-    padding: 10px;
-    height: 30px;
-    width: 230px;
+    margin: 5px;
+    height: 25px;
     display: flex;
     align-items: center;
+    justify-content: center;
     text-decoration: none;
+    
+    @media only screen and (min-width: 1050px) {
+        width: 230px;
+    }
+    
+    @media only screen and (max-width: 1050px) {
+        justify-content: flex-start;
+        text-align: left;
+    }
 `;
 const Git = styled.div`
     flex: 1;
@@ -338,6 +354,10 @@ const Git = styled.div`
     font-size: 17px;
     font-weight: 700;
     color: #349eeb;
+    
+    @media only screen and (max-width: 1050px) {
+        font-size: 13px;
+    }
 `;
 
 export default function() {
