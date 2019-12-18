@@ -1,63 +1,25 @@
 import React from "react";
 import styled from "styled-components";
 
-const Wrapper = styled.div`
+const FlexDiv = styled.div`
     display: flex;
+    position: relative;
+`;
+
+const Wrapper = styled(FlexDiv)`
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    background-color: #fff;
-    padding-bottom: 100px;
-
-    @media only screen and (max-width: 512px) {
-        padding-bottom: 20px;
-    }
-`;
-
-const Header = styled.div`
-    width: 100%;
-    height: 80px;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    position: relative;
-    margin-bottom: 20px;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fafafa;
 `;
 
-const Title = styled.div`
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-family: 'Prompt', sans-serif;
-    font-size: 30px;
-    font-weight: 900;
-    color: #333;
-`;
-
-const Summary = styled.div` 
-    font-family: 'Prompt', sans-serif;
-    font-size: 20px;
-    font-weight: 500;
-    color: #444;
-
-    @media only screen and (max-width: 1050px) {
-        font-size: 15px;
-    }
-
-    @media only screen and (max-width: 512px) {
-        font-size: 12px;
-    }
-`;
-
-const Body = styled.div`
-    position: relative;
+const Body = styled(FlexDiv)`
     flex-direction: column;
-    display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 60px;
+    margin: 150px auto;
 
     @media only screen and (min-width: 1050px) {
         height: 360px;
@@ -67,7 +29,7 @@ const Body = styled.div`
 
 const A = styled.div`
     border-radius: 5px;
-    background-color: #fafafa;
+    background-color: #fff;
     box-shadow: 0 0 3px rgba(0,0,0,0.3);
     display: flex;
 
@@ -172,7 +134,7 @@ const ASummary = styled.div`
     font-size: 14px;
     font-weight: 900;
     color: #e3c934;
-    align-self: center;
+    align-self: flex-start;
     margin: 10px;
 `;
 
@@ -196,22 +158,15 @@ const ASmall = styled.div`
 const ADetail = styled.div`
     font-family: 'Prompt', sans-serif;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 500;
     color: #333;
-    margin-left: 10px;
+    margin: 5px;
 `;
 
 export default function() {
 
     return (
         <Wrapper id="skills">
-            <Header>
-                <Title>Skills</Title>
-            </Header>
-
-            <Summary>I use Javascript mainly.</Summary>
-            <Summary>I know Javascript very deeply and I can use it efficiently.</Summary>
-            <Summary>I also use Python and Java a little.</Summary>
 
             <Body>
                 <A style={{alignSelf:"flex-start"}}>
@@ -226,14 +181,14 @@ export default function() {
 
                                 <ABody>
                                     <ASummary>
-                                        I can make REST-API and Graphql-API.
+                                        REST-API 와 Graphql-API 사용
                                     </ASummary>
 
                                     <ABig>Javascript</ABig>
-                                    <ASmall>framework : express, graphql</ASmall>
+                                    <ASmall>프레임워크 : express, graphql</ASmall>
 
                                     <ABig>Python</ABig>
-                                    <ASmall>framework : Django</ASmall>
+                                    <ASmall>프레임워크 : Django</ASmall>
 
                                     <ABig>Docker</ABig>
 
@@ -246,22 +201,23 @@ export default function() {
                             <Right>
                                 <ABig>Javascript</ABig>
                                 <ADetail>
-                                    Javascript is my main using language. I know how javascript work with its engine(V8) in computer. If data is small to process and communicate, I usually use node.js for server environment.
+                                    Javascript가 주력 언어입니다. Javascript의 구동환경 별 작동방식에 대해 잘 알고 있습니다.
+                                    Express 프레임워크와 Grapqhl-API 및 REST-API를 결합해 서버를 구축해봤으며, Express 오픈소스를 분석하고 커뮤니티에 기여하기 위해 노력하고 있습니다.
                                 </ADetail>
 
                                 <ABig>Python</ABig>
                                 <ADetail>
-                                    Python is my first web programming language. I use Django-rest-framework for python project.
+                                    Python은 첫 프로그래밍 언어입니다. Python 프로젝트에는 프레임워크로 Django와 DRF(Django Rest Framework)를 사용합니다.
                                 </ADetail>
 
                                 <ABig>Docker</ABig>
                                 <ADetail>
-                                    I use Docker to administrate project.
+                                    프로젝트를 관리하기 위해 Docker 컨테이너를 활용합니다.
                                 </ADetail>
 
                                 <ABig>NGINX</ABig>
                                 <ADetail>
-                                    I usually use NGINX for reverse-proxy server or Load-Balancer using upstream module.
+                                    Nginx는 리버스 프록시 환경 혹은 로드밸런싱을 위해 사용하고 있습니다.
                                 </ADetail>
                             </Right>
                         </AContainer>
@@ -269,27 +225,25 @@ export default function() {
                 </A>
                 
                 <A style={{alignSelf:"center"}}>
-                    <IconContainer>
+                    <IconContainer style={{backgroundColor: "#628ed9"}}>
                         <Icon src={require("../../assets/frontend.png")} />
                     </IconContainer>
 
                     <InnerA>
                         <AContainer>
-                            <Left>
+                            <Left>  
                                 <ATitle>Client</ATitle>
 
                                 <ABody>
-                                    <ASummary>
-                                        I use React for front-end development.
-                                    </ASummary>
+                                    <ASummary style={{color: "#628ed9"}}>React 와 React-Native 사용</ASummary>
 
                                     <ABig>HTML5</ABig>
 
                                     <ABig>CSS3</ABig>
 
                                     <ABig>Javascript</ABig>
-                                    <ASmall>version : ~ ES5 & ES6</ASmall>
-                                    <ASmall>library &nbsp;: React, React-native, redux, apollo, react-hooks</ASmall>
+                                    <ASmall>버전 : ~ ES5 & ES6</ASmall>
+                                    <ASmall>라이브러리 &nbsp;: React, React-native, Redux, Apollo, React-hooks</ASmall>
                                 </ABody>
                             </Left>
 
@@ -297,16 +251,14 @@ export default function() {
 
                             <Right>
                                 <ABig>HTML5 & CSS3</ABig>
-                                <ADetail>
-                                    Basically, I know syntax HTML5 and CSS3 and can use it freely.
-                                </ADetail>
+                                <ADetail>기본적으로 HTML5와 CSS3로 웹을 구성하는 방법을 알고 자유롭게 사용할 수 있습니다.</ADetail>
 
                                 <ABig>Javascript</ABig>
                                 <ADetail>
-                                    I use React and React-Native javascript library to make dynamic web and to communicate with Server.
+                                    동적 웹페이지를 만들고 서버와 통신하기 위해 자바스크립트 라이브러리 React와 React Native를 사용합니다.
                                 </ADetail>
                                 <ADetail>
-                                    To manage state, Redux or Apollo-client is used and recently I'm using apollo-client, apollo-inmemory-cache and react-hooks.
+                                    상태관리를 위해, Redux와 Apollo Client를 사용하는데, 주로 Apollo Client와 Apollo Inmemory Cache, React Hooks의 함수형 컴퍼넌트를 결합해 사용합니다.
                                 </ADetail>
                             </Right>
                         </AContainer>
@@ -314,7 +266,7 @@ export default function() {
                 </A>
                 
                 <A style={{alignSelf:"flex-end"}}>
-                    <IconContainer>
+                    <IconContainer style={{backgroundColor: "#a347ba"}}>
                         <Icon src={require("../../assets/others.png")} />
                     </IconContainer>
                     
@@ -324,15 +276,13 @@ export default function() {
                                 <ATitle>Others</ATitle>
 
                                 <ABody>
-                                    <ASummary>
-                                        I use git as version management.
-                                    </ASummary>
+                                    <ASummary style={{color: "#a347ba"}}>버전관리를 위해 git 사용</ASummary>
 
                                     <ABig>Version Management</ABig>
-                                    <ASmall>tools : Git</ASmall>
+                                    <ASmall>도구 : Git</ASmall>
 
                                     <ABig>Simple Design</ABig>
-                                    <ASmall>tools : Photoshop, Procreate</ASmall>
+                                    <ASmall>도구 : Photoshop, Procreate</ASmall>
                                 </ABody>
                             </Left>
 
@@ -341,12 +291,12 @@ export default function() {
                             <Right>
                                 <ABig>Git</ABig>
                                 <ADetail>
-                                    I use git to manage my project version and Collaborate. I can use collaborating command of git.
+                                    프로젝트의 버전관리와 협업을 위해 git을 사용합니다.
                                 </ADetail>
 
                                 <ABig>Simple Design</ABig>
                                 <ADetail>
-                                    I learned design in university. So I can design a little.
+                                    웹디자인을 위해 Photoshop과 Procreate를 사용합니다. 
                                 </ADetail>
                             </Right>
                         </AContainer>

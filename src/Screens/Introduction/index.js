@@ -195,163 +195,209 @@ const line7 = keyframes`
     }
 `;
 
-
-const Wrapper = styled.div`
-    width: 100%;
+const FlexDiv = styled.div`
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 50px auto;
-    background-color: #fff;
-    padding-bottom: 100px;
-`;
-
-const ImgContainer = styled.div`
     position: relative;
-    width: 100%;
-    height: 60vh;
-    background-color: #333;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
 `;
 
+const Wrapper = styled(FlexDiv)`
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #333;
+    
+    @media only screen and (max-width: 1080px) {
+        flex-direction: column;
+    }
+
+    @media only screen and (min-width: 1080px) {
+        flex-direction: row;
+    }
+`;
+
+const GraphicArea = styled(FlexDiv)`
+    width: 100%;
+    height: 100%;
+    flex: 2;
+    align-items: center;
+    justify-content: center;
+`;
 const Img = styled.img.attrs({
     src: require("../../assets/intro.png")
 })`
     position: relative;
-    top: -100px;
-    width: 75%;
-    max-width: 800px;
+    width: 360px;
+    transition: .4s;
+
+    ${props => props.on ? `
+        right: 0
+    ` : `
+        right: 50vw;
+    `};
 `;
 
-const ImgContent = styled.div`
-    bottom: 100px;
-    position: absolute;
-    width: 75%;
-    max-width: 800px;
-    display: flex;
-    align-items: flex-end;
-`;
-
-const Column1 = styled.div`
-    flex:3;
-    height: 13vw;
-    max-height: 150px;
-    display: flex;
+const ContentArea = styled(FlexDiv)`
+    width: 100%;
+    height: 100%;
+    flex: 3;
     flex-direction: column;
+`;
+const Introduction = styled(FlexDiv)`
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
     justify-content: center;
-    align-items: center;
-`;
-const Clock = styled.div`
-    font-size: 2vw;
-    font-weight: 800;
+    padding: 20px 50px;
 
-    @media only screen and (min-width: 1080px) {
-        font-size: 25px;
-    }
-
-    @media only screen and (max-width: 700px) {
-        font-size: 12px;
+    @media only screen and (max-width: 1080px) {
+        justify-content: flex-start;
     }
 `;
-const Column2 = styled.div`
-    flex:5;
-    height: 25vw;
-    max-height: 270px;
-    display: flex;
+const IntroContainer = styled(FlexDiv)`
     flex-direction: column;
-    opacity: 0.8;
-`;
-
-const Code = styled.div`
-    margin-left: 15%;
     width: 70%;
-    height: 5.5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    transition: .7s;
+
+    ${props => props.on ? `
+        left: 0;
+    ` : `
+        left: 70vw;
+    `};
 `;
-
-const CodeLine1 = styled.div`
-    height: 2px;
-    background-color: yellow;
-    animation: ${line1} 3s infinite;
-`;
-
-const CodeLine2 = styled(CodeLine1)`
-    animation: ${line2} 2.2s infinite;
-`;
-
-const CodeLine3 = styled(CodeLine1)`
-    animation: ${line3} 2s infinite;
-`;
-
-const CodeLine4 = styled(CodeLine1)`
-    animation: ${line4} 2.5s infinite;
-`;
-
-const CodeLine5 = styled(CodeLine1)`
-    animation: ${line5} 1.5s infinite;
-`;
-
-const CodeLine6 = styled(CodeLine1)`
-    animation: ${line6} 3s infinite;
-`;
-
-const CodeLine7 = styled(CodeLine1)`
-    animation: ${line7} 2s infinite;
-`;
-
-
-const Container = styled.div`
+const GuideLine = styled.div`
+    width: 60vw;
+    height: 1px;
+    background-color: #fff;
     position: relative;
-    top: -97px;
-    max-width: 850px;
-    width: 70%;
-    height: 150px;
-    // border: 2px solid #111;
-    border-radius: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 50px;
-    background-color: #f5f5f5;
-    box-shadow: 0 0 3px 1px rgba(0,0,0,0.3);
+    transition: .7s;
 
-    @media only screen and (max-width: 512px) {
-        width: 65%;
-        border-radius: 20px;
-        height: 100px;
-    }
+    ${props => props.on ? `
+        left: 0;
+    ` : `
+        left: 70vw;
+    `};
 `;
-
-const T1 = styled.div`
+const Title = styled.span`
     font-family: 'Prompt', sans-serif;
-    font-size: 22px;
+    font-size: 35px;
     font-weight: 900;
-    color: #444;
-    margin: 5px 0;
     line-height: 40px;
+    color: #fff;
+    margin: 30px 0;
 
-    @media only screen and (max-width: 512px) {
-        font-size: 14px;
-        line-height: 25px;
+    @media only screen and (max-width: 1080px) {
+        margin-bottom: 20px;
     }
 `;
+const Description = styled.span`
+    font-family: 'Prompt', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 30px;
+    color: #fff;
+    margin-bottom: 30px;
+`;
 
-const Arrow = styled.img.attrs({
-    src: require("../../assets/arrow_bottom.png")
+const LinkContainer = styled(FlexDiv)`
+    position: absolute;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    bottom: 20px;
+    right: 0px;
+`;
+
+const EmailBox = styled(FlexDiv)`
+    width: 200px;
+    height: 60px;
+    background-color: #a347ba;
+    margin: 10px 0;
+    align-items: center;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    transition: .3s;
+
+    ${props => props.on ? `
+        left: 0;
+    ` : `
+        left: 250px;
+    `};
+`;
+
+const EmailIcon = styled.img.attrs({
+    src: require("../../assets/gmail.png")
 })`
     width: 50px;
+    height: 50px;
+    margin: 5px;
+`;
+const EmailText = styled.span`
+    font-family: 'Prompt', sans-serif;
+    font-size: 15px;
+    font-weight: 900;
+    color: #fff;
+`;
+const GitBox = styled.a`
+    display: flex;
+    position: relative;
+    width: 300px;
+    height: 100px;
+    background-color: #628ed9;
+    margin: 10px 0;
+    border-top-left-radius: 45px;
+    border-bottom-left-radius: 45px;
+    transition: .3s;
+    pointer: cursor;
+    text-decoration: none;
 
-    animation: ${move} 1s linear infinite;
+    ${props => props.on ? `
+        left: 0;
+    ` : `
+        left: 350px;
+    `};
+`;
+const Proflie = styled.img.attrs({
+    src: require("../../assets/profile.jpg")
+})`
+    width: 90px;
+    height: 90px;
+    border-radius: 45px;
+    margin: 5px;
+    margin-right: 10px;
 `;
 
+const GitTexts = styled(FlexDiv)`
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+`;
+const GitBigText = styled.span`
+    font-family: 'Prompt', sans-serif;
+    font-size: 15px;
+    font-weight: 900;
+    color: #fff;
+    margin: 2px 0;
+`;
+const GitSmallText = styled.span`
+    font-family: 'Prompt', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+    margin: 2px 0;
+`;
 
-export default function() {
+export default function({introState}) {
     const [time, setTime] = useState(null);
+    const [state1, setState1] = useState(false); //guideLine
+    const [state2, setState2] = useState(false); //png
+    const [state3, setState3] = useState(false); //comment
+    const [state4, setState4] = useState(false); //email
+    const [state5, setState5] = useState(false); //git
+    const [state6, setState6] = useState(false); //clock
 
     const updateTime = function () {
         const currentDate=new Date();
@@ -376,66 +422,71 @@ export default function() {
         updateTime()
     })
 
+    useEffect(()=>{
+        if(introState) {
+            setTimeout(()=>setState1(true), 0);
+            setTimeout(()=>setState2(true), 300);
+            setTimeout(()=>setState3(true), 900);
+            setTimeout(()=>setState4(true), 1800);
+            setTimeout(()=>setState5(true), 1900);
+            setTimeout(()=>setState6(true), 2500);
+        }else{
+            setState1(false);
+            setState2(false);
+            setState3(false);
+            setState4(false);
+            setState5(false);
+            setState6(false);
+        }
+    }, [introState])
+
     return(
         <Wrapper id="introduction">
-            <ImgContainer>
-                <Img />
+            <GraphicArea>
+                <Img on={state2} />
+            </GraphicArea>
 
-                <ImgContent>
-                    <Column1 />
+            <ContentArea>
+                <Introduction>
+                    <GuideLine on={state1} />
 
-                    <Column2>
-                        <Code />
-                        <Code />
-                        <Code>
-                            <CodeLine1 />
-                        </Code>
+                    <IntroContainer on={state3}>
+                        <Title>Full-Stack Web Developer</Title>
+                        <Description />
 
-                        <Code>
-                            <CodeLine2 />
-                        </Code>
+                        <Description>
+                            저는 빠르게 배우고 성장하며 열심히 일할 준비가 돼있는 개발자 정형수입니다.
+                        </Description>
 
-                        <Code>
-                            <CodeLine3 />
-                        </Code>
+                        <Description>
+                            주 언어는 Javascript 입니다.
+                            Javascript는 ES6문법과 내부동작 방식 등을 심도있게 공부했고,
+                            React, React-native,
+                            node.js 등을 사용해 개발을 한 경험이 있습니다. 또한, Python, Django를 사용해 REST-API서버를 개발할 수 있습니다.
+                            최근에는 오픈소스 활동에 관심이 가서 express를 공부하며 홈페이지 번역과 오타수정 등의 작은 참여를 시작했습니다.
+                        </Description>
+                    </IntroContainer>
 
-                        <Code>
-                            <CodeLine4 />
-                        </Code>
+                    <GuideLine on={state1} />
+                </Introduction>
+            </ContentArea>
+            
 
-                        <Code>
-                            <CodeLine5 />
-                        </Code>
+            <LinkContainer>
+                    <EmailBox on={state4}>
+                        <EmailIcon />
+                        <EmailText>Email 보내기</EmailText>
+                    </EmailBox>
 
-                        <Code>
-                            <CodeLine6 />
-                        </Code>
+                    <GitBox on={state5} href={"https://github.com/jngcii"} target="_blank">
+                        <Proflie />
 
-                        <Code>
-                            <CodeLine7 />
-                        </Code>
-
-                        <Code>
-                            <CodeLine1 />
-                        </Code>
-
-                        <Code>
-                            <CodeLine4 />
-                        </Code>
-                    </Column2>
-
-                    <Column1>
-                        <Clock>{time}</Clock>
-                    </Column1>
-                </ImgContent>
-            </ImgContainer>
-
-            <Container>
-                <T1>Welcome to my portfolio.</T1>
-                <T1>I'm web developer Hyungsoo.</T1>
-                <T1 style={{marginBottom: 40}}>Let me introduce myself.</T1>
-                <Arrow style={{tintColor: "#ddd"}} />
-            </Container>
+                        <GitTexts>
+                            <GitBigText>Github 방문하기</GitBigText>
+                            <GitSmallText>https://github.com/jngcii</GitSmallText>
+                        </GitTexts>
+                    </GitBox>
+                </LinkContainer>
         </Wrapper>
     );
 }

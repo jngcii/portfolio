@@ -12,12 +12,12 @@ const Move = keyframes`
 
 const Wrapper = styled.div`
     width: 100%;
-    height: 100%;
+    height: 93%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
+    overflow: hidden;
 `;
 
 const Logo = styled.img.attrs({
@@ -134,18 +134,6 @@ export default function() {
             <Description>My first API Project.</Description>
             <Description>Semi-annonymous video chatting application.</Description>
             <Description>If you wanna know who send the short video message, you have to send to him too!</Description>
-
-            <Tech>
-                <TTitle>Tech Stack</TTitle>
-                <TImg />
-            </Tech>
-
-            <LinkContainer>
-                <Link href="https://github.com/jngcii/wink-api">
-                    <GitIcon />
-                    <Git>API-Server</Git>
-                </Link>
-            </LinkContainer>
         </Wrapper>
     );
 }

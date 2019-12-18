@@ -1,6 +1,6 @@
-import React, {useState} from "react";
+import React from "react";
 import styled from "styled-components";
-import Checkloud from "../../Components/Checkloud";
+import ReactPlayer from 'react-player'
 import Wink from "../../Components/Wink";
 
 const Wrapper = styled.div`
@@ -8,9 +8,8 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    background-color: #fff;
-    padding-bottom: 100px;
-    padding-top: 150px;
+    height: 100vh;
+    background-color: #fafafa;
 `;
 
 const Header = styled.div`
@@ -20,18 +19,6 @@ const Header = styled.div`
     align-items: center;
     justify-content: center;
     position: relative;
-`;
-
-const Title = styled.div`
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-family: 'Prompt', sans-serif;
-    font-size: 30px;
-    font-weight: 900;
-    color: #333;
 `;
 
 const Selector = styled.div`
@@ -83,39 +70,48 @@ const Indicator = styled.div`
 `;
 
 const Body = styled.div`
-    min-height: 100vh;
+    flex: 1;
     width: 80%;
     padding: 10px 30px;
     display: flex;
+    justify-content: center;
 `;
 
 
-export default function() {
-    const [current, setCurrent] = useState("checkloud");
+export default function({proj, setProj}) {
 
     return (
         <Wrapper id="project">
-            <Header>
-                <Title>Project</Title>
-            </Header>
+            <Header />
 
             <Selector>
-                <SelectColumn isCurrent={current==="checkloud"} onClick={()=>setCurrent("checkloud")}>
+                <SelectColumn isCurrent={proj==="checkloud"} onClick={()=>setProj("checkloud")}>
                     Checkloud
                 </SelectColumn>
-                <SelectColumn isCurrent={current==="wink"} onClick={()=>setCurrent("wink")}>
+                <SelectColumn isCurrent={proj==="wink"} onClick={()=>{
+                    // setProj("wink");
+                }}>
                     Wink
                 </SelectColumn>
             </Selector>
 
             <Divider>
-                <IndicatorContainer style={{marginLeft: current==="checkloud" ? "0%" : "50%"}}>
+                <IndicatorContainer style={{marginLeft: proj==="checkloud" ? "0%" : "50%"}}>
                     <Indicator />
                 </IndicatorContainer>
             </Divider>
 
             <Body>
-                {current==="checkloud" ? <Checkloud /> : <Wink />}
+                {proj==="checkloud" ? (
+                    <ReactPlayer
+                        url={require("../../assets/cccf.mp4")}
+                        playing={true} 
+                        width='93%'
+                        height='93%'
+                    />
+                ) : (
+                    <Wink />
+                )}
             </Body>
         </Wrapper>
     );

@@ -3,7 +3,9 @@ import styled from "styled-components";
 import Introduction from "./Screens/Introduction";
 import Skills from "./Screens/Skills";
 import Project from "./Screens/Project";
-import Contact from "./Screens/Contact";
+import ReactFullpage from '@fullpage/react-fullpage';
+import First from "./Components/Checkloud/First";
+import Second from "./Components/Checkloud/Second";
 
 const Wrapper = styled.div`
     width:100%;
@@ -154,6 +156,12 @@ const Link = styled.a`
         }
     `};
 
+    ${props => props.now && `
+        font-weight: 900;
+        color: #fff;
+        font-size: 16px;
+    `};
+
     @media only screen and (max-width: 1050px) {
         font-size: 12px;
         font-weight: 700;
@@ -171,31 +179,44 @@ const Link = styled.a`
 
 
 const Content = styled.div`
-    padding-top: 40vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 100vw;
+    height: 100vh;
     background-color: #333;
 `;
 
 export default function(){
     const [navState, setNavState] = useState("b");
-  
-    useEffect(()=>{
-      window.addEventListener("scroll", ()=>{
-        const scrollTop =
-          (document.documentElement && document.documentElement.scrollTop) ||
-          document.body.scrollTop;
+    const [introState, setIntroState] = useState(false);
+    const [proj, setProj] = useState("checkloud");
+    const [page, setPage] = useState(0)
 
-        if(scrollTop < 100) setNavState("b");
-        else if(scrollTop >= 100) setNavState("s");
-      });
+    const fullpageOptions = {
+        anchors: ["firstPage", "secondPage", "thirdPage", "fourthPage"],
+        scrollOverflow: false,
+        onLeave: function(origin, destination, direction){
+            if(origin.index === 0){
+                setNavState("s");
+                setIntroState(false);
+            } else if(destination.index === 0) {
+                setNavState("b");
+                setIntroState(false);
+            }
 
-      return () => {
-        window.removeEventListener('scroll');
-      };
-    },[])
+            if(destination.index === 0){
+                setPage(0);
+            }else if(destination.index === 1){
+                setPage(1);
+            }else if(destination.index === 2){
+                setPage(2);
+            }else{
+                setPage(3);
+            }
+        },
+
+        afterLoad: function(origin, destination, direction){
+            if(destination.index === 1) setIntroState(true);
+        }
+    };
 
     return (
         <Wrapper>
@@ -225,18 +246,50 @@ export default function(){
             </MainWrapper>
 
             <Nav s={navState==="s"}>
-                <Link s={navState==="s"} href="#introduction">INTRODUCTION</Link>
-                <Link s={navState==="s"} href="#skills">SKILLS</Link>
-                <Link s={navState==="s"} href="#project">PROJECT</Link>
-                <Link s={navState==="s"} href="#contact">CONTACT</Link>
+                <Link now={page===1} s={navState==="s"} href="#introduction">INTRODUCTION</Link>
+                <Link now={page===2} s={navState==="s"} href="#skills">SKILLS</Link>
+                <Link now={page===3} s={navState==="s"} href="#project">PROJECT</Link>
             </Nav>
 
-            <Content>
-                <Introduction />
-                <Skills />
-                <Project />
-                <Contact />
-            </Content>
+            <ReactFullpage
+                //fullpage options
+                {...fullpageOptions}
+                scrollingSpeed = {400} /* Options here */
+
+                render={({ state, fullpageApi }) => {
+                    return (
+                        <ReactFullpage.Wrapper>
+                            <div className="section">
+                                <Content />
+                            </div>
+
+                            <div className="section">
+                                <Introduction introState={introState} />
+                            </div>
+
+                            <div className="section">
+                                <Skills />
+                            </div>
+
+                            <div className="section">
+                                <Project proj={proj} setProj={setProj} />
+                            </div>
+
+                            {proj === "checkloud" && (
+                                <div className="section">
+                                    <First />
+                                </div>
+                            )}
+
+                            {proj === "checkloud" && (
+                                <div className="section">
+                                    <Second />
+                                </div>
+                            )}
+                        </ReactFullpage.Wrapper>
+                    );
+                }}
+            />
         </Wrapper>
     );
 }
