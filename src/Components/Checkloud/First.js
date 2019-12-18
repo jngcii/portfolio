@@ -1,8 +1,5 @@
-import React, {useState} from "react";
+import React from "react";
 import styled from "styled-components";
-import ReactPlayer from 'react-player'
-import Role from "./Role";
-import Tech from "./Tech";
 
 const FlexDiv = styled.div`
     display: flex;
@@ -110,7 +107,6 @@ const Git = styled.div`
 `;
 
 export default function() {
-    const [memo, setMemo] = useState(1);
     return (
         <Wrapper>
             <Container>

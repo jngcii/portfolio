@@ -78,7 +78,7 @@ const Body = styled.div`
 `;
 
 
-export default function({proj, setProj}) {
+export default function({proj, setProj, page}) {
 
     return (
         <Wrapper id="project">
@@ -105,7 +105,9 @@ export default function({proj, setProj}) {
                 {proj==="checkloud" ? (
                     <ReactPlayer
                         url={require("../../assets/cccf.mp4")}
-                        playing={true} 
+                        playing={true}
+                        loop={true}
+                        controls={true}
                         width='93%'
                         height='93%'
                     />

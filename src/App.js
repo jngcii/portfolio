@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import Introduction from "./Screens/Introduction";
 import Skills from "./Screens/Skills";
@@ -272,7 +272,7 @@ export default function(){
                             </div>
 
                             <div className="section">
-                                <Project proj={proj} setProj={setProj} />
+                                <Project proj={proj} setProj={setProj} page={page} />
                             </div>
 
                             {proj === "checkloud" && (

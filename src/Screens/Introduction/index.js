@@ -1,199 +1,199 @@
 import React, {useState, useEffect} from "react";
-import styled, {keyframes} from "styled-components";
+import styled from "styled-components";
 
-const move = keyframes`
-    from { margin-top: 25px; }
-    to { margin-top: 50px; }
-`;
+// const move = keyframes`
+//     from { margin-top: 25px; }
+//     to { margin-top: 50px; }
+// `;
 
-const line1 = keyframes`
-    0% {
-        width: 40%;
-        opacity: 0.9;
-    }
-    20% {
-        width: 60%;
-        opacity: 0.5;
-    }
-    40% {
-        width: 30%;
-        opacity: 0.7;
-    }
-    60% {
-        width: 70%;
-        opacity: 0.4;
-    }
-    80% {
-        width: 50%;
-        opacity: 0.5;
-    }
-    100% {
-        width: 40%;
-        opacity: 0.9;
-    }
-`;
+// const line1 = keyframes`
+//     0% {
+//         width: 40%;
+//         opacity: 0.9;
+//     }
+//     20% {
+//         width: 60%;
+//         opacity: 0.5;
+//     }
+//     40% {
+//         width: 30%;
+//         opacity: 0.7;
+//     }
+//     60% {
+//         width: 70%;
+//         opacity: 0.4;
+//     }
+//     80% {
+//         width: 50%;
+//         opacity: 0.5;
+//     }
+//     100% {
+//         width: 40%;
+//         opacity: 0.9;
+//     }
+// `;
 
-const line2 = keyframes`
-    0% {
-        width: 30%;
-        opacity: 0.7;
-    }
-    20% {
-        width: 90%;
-        opacity: 0.4;
-    }
-    40% {
-        width: 60%;
-        opacity: 0.5;
-    }
-    60% {
-        width: 60%;
-        opacity: 0.7;
-    }
-    80% {
-        width: 40%;
-        opacity: 0.9;
-    }
-    100% {
-        width: 30%;
-        opacity: 0.7;
-    }
-`;
+// const line2 = keyframes`
+//     0% {
+//         width: 30%;
+//         opacity: 0.7;
+//     }
+//     20% {
+//         width: 90%;
+//         opacity: 0.4;
+//     }
+//     40% {
+//         width: 60%;
+//         opacity: 0.5;
+//     }
+//     60% {
+//         width: 60%;
+//         opacity: 0.7;
+//     }
+//     80% {
+//         width: 40%;
+//         opacity: 0.9;
+//     }
+//     100% {
+//         width: 30%;
+//         opacity: 0.7;
+//     }
+// `;
 
-const line3 = keyframes`
-    0% {
-        width: 70%;
-        opacity: 0.4;
-    }
-    10% {
-        width: 50%;
-        opacity: 0.5;
-    }
-    30% {
-        width: 60%;
-        opacity: 0.7;
-    }
-    50% {
-        width: 40%;
-        opacity: 0.9;
-    }
-    70% {
-        width: 60%;
-        opacity: 0.5;
-    }
-    100% {
-        width: 70%;
-        opacity: 0.4;
-    }
-`;
+// const line3 = keyframes`
+//     0% {
+//         width: 70%;
+//         opacity: 0.4;
+//     }
+//     10% {
+//         width: 50%;
+//         opacity: 0.5;
+//     }
+//     30% {
+//         width: 60%;
+//         opacity: 0.7;
+//     }
+//     50% {
+//         width: 40%;
+//         opacity: 0.9;
+//     }
+//     70% {
+//         width: 60%;
+//         opacity: 0.5;
+//     }
+//     100% {
+//         width: 70%;
+//         opacity: 0.4;
+//     }
+// `;
 
-const line4 = keyframes`
-    0% {
-        width: 60%;
-        opacity: 0.7;
-    }
-    20% {
-        width: 40%;
-        opacity: 0.9;
-    }
-    50% {
-        width: 60%;
-        opacity: 0.5;
-    }
-    70% {
-        width: 30%;
-        opacity: 0.7;
-    }
-    90% {
-        width: 90%;
-        opacity: 0.4;
-    }
-    100% {
-        width: 60%;
-        opacity: 0.7;
-    }
-`;
+// const line4 = keyframes`
+//     0% {
+//         width: 60%;
+//         opacity: 0.7;
+//     }
+//     20% {
+//         width: 40%;
+//         opacity: 0.9;
+//     }
+//     50% {
+//         width: 60%;
+//         opacity: 0.5;
+//     }
+//     70% {
+//         width: 30%;
+//         opacity: 0.7;
+//     }
+//     90% {
+//         width: 90%;
+//         opacity: 0.4;
+//     }
+//     100% {
+//         width: 60%;
+//         opacity: 0.7;
+//     }
+// `;
 
-const line5 = keyframes`
-    0% {
-        width: 40%;
-        opacity: 0.9;
-    }
-    20% {
-        width: 60%;
-        opacity: 0.5;
-    }
-    40% {
-        width: 30%;
-        opacity: 0.7;
-    }
-    60% {
-        width: 80%;
-        opacity: 0.4;
-    }
-    80% {
-        width: 50%;
-        opacity: 0.5;
-    }
-    100% {
-        width: 40%;
-        opacity: 0.9;
-    }
-`;
+// const line5 = keyframes`
+//     0% {
+//         width: 40%;
+//         opacity: 0.9;
+//     }
+//     20% {
+//         width: 60%;
+//         opacity: 0.5;
+//     }
+//     40% {
+//         width: 30%;
+//         opacity: 0.7;
+//     }
+//     60% {
+//         width: 80%;
+//         opacity: 0.4;
+//     }
+//     80% {
+//         width: 50%;
+//         opacity: 0.5;
+//     }
+//     100% {
+//         width: 40%;
+//         opacity: 0.9;
+//     }
+// `;
 
-const line6 = keyframes`
-    0% {
-        width: 20%;
-        opacity: 0.2;
-    }
-    20% {
-        width: 90%;
-        opacity: 0.9;
-    }
-    40% {
-        width: 50%;
-        opacity: 0.7;
-    }
-    60% {
-        width: 70%;
-        opacity: 0.4;
-    }
-    80% {
-        width: 80%;
-        opacity: 0.5;
-    }
-    100% {
-        width: 20%;
-        opacity: 0.2;
-    }
-`;
+// const line6 = keyframes`
+//     0% {
+//         width: 20%;
+//         opacity: 0.2;
+//     }
+//     20% {
+//         width: 90%;
+//         opacity: 0.9;
+//     }
+//     40% {
+//         width: 50%;
+//         opacity: 0.7;
+//     }
+//     60% {
+//         width: 70%;
+//         opacity: 0.4;
+//     }
+//     80% {
+//         width: 80%;
+//         opacity: 0.5;
+//     }
+//     100% {
+//         width: 20%;
+//         opacity: 0.2;
+//     }
+// `;
 
-const line7 = keyframes`
-    0% {
-        width: 50%;
-        opacity: 0.4;
-    }
-    10% {
-        width: 70%;
-        opacity: 0.3;
-    }
-    20% {
-        width: 80%;
-        opacity: 0.9;
-    }
-    50% {
-        width: 50%;
-        opacity: 0.2;
-    }
-    70% {
-        width: 20%;
-        opacity: 0.2;
-    }
-    100% {
-        width: 50%;
-        opacity: 0.4;
-    }
-`;
+// const line7 = keyframes`
+//     0% {
+//         width: 50%;
+//         opacity: 0.4;
+//     }
+//     10% {
+//         width: 70%;
+//         opacity: 0.3;
+//     }
+//     20% {
+//         width: 80%;
+//         opacity: 0.9;
+//     }
+//     50% {
+//         width: 50%;
+//         opacity: 0.2;
+//     }
+//     70% {
+//         width: 20%;
+//         opacity: 0.2;
+//     }
+//     100% {
+//         width: 50%;
+//         opacity: 0.4;
+//     }
+// `;
 
 const FlexDiv = styled.div`
     display: flex;
@@ -391,36 +391,36 @@ const GitSmallText = styled.span`
 `;
 
 export default function({introState}) {
-    const [time, setTime] = useState(null);
+    // const [time, setTime] = useState(null);
     const [state1, setState1] = useState(false); //guideLine
     const [state2, setState2] = useState(false); //png
     const [state3, setState3] = useState(false); //comment
     const [state4, setState4] = useState(false); //email
     const [state5, setState5] = useState(false); //git
-    const [state6, setState6] = useState(false); //clock
+    // const [state6, setState6] = useState(false); //clock
 
-    const updateTime = function () {
-        const currentDate=new Date();
-        let apm=currentDate.getHours();
-        if(apm<12)
-        {
-            apm="a.m";
-        }
-        else
-        {
-            apm="p.m";
-        }
+    // const updateTime = function () {
+    //     const currentDate=new Date();
+    //     let apm=currentDate.getHours();
+    //     if(apm<12)
+    //     {
+    //         apm="a.m";
+    //     }
+    //     else
+    //     {
+    //         apm="p.m";
+    //     }
         
-        const msg = apm + " " + (currentDate.getHours()-12)+":"+currentDate.getMinutes();
+    //     const msg = apm + " " + (currentDate.getHours()-12)+":"+currentDate.getMinutes();
 
-        setTime(msg)
+    //     setTime(msg)
         
-        setTimeout(updateTime,60000);
-    };
+    //     setTimeout(updateTime,60000);
+    // };
 
-    useEffect(()=>{
-        updateTime()
-    })
+    // useEffect(()=>{
+    //     updateTime()
+    // })
 
     useEffect(()=>{
         if(introState) {
@@ -429,14 +429,14 @@ export default function({introState}) {
             setTimeout(()=>setState3(true), 900);
             setTimeout(()=>setState4(true), 1800);
             setTimeout(()=>setState5(true), 1900);
-            setTimeout(()=>setState6(true), 2500);
+            // setTimeout(()=>setState6(true), 2500);
         }else{
             setState1(false);
             setState2(false);
             setState3(false);
             setState4(false);
             setState5(false);
-            setState6(false);
+            // setState6(false);
         }
     }, [introState])
 
